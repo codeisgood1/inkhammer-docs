@@ -13,6 +13,8 @@
     ["Using Ink Hammer", [
       ["interface.html", "The main window"],
       ["tools.html", "The tools"],
+      ["cliffs.html", "Cliffs, dunes and hills"],
+      ["walls.html", "Walls and buildings"],
       ["layers.html", "Layers"],
       ["lighting.html", "Light and shadow"],
       ["export.html", "Exporting for play"]
@@ -21,11 +23,12 @@
       ["claude.html", "Connect Claude"]
     ]],
     ["Help", [
+      ["whats-new.html", "What's new"],
       ["shortcuts.html", "Keyboard shortcuts"],
       ["troubleshooting.html", "Troubleshooting"]
     ]]
   ];
-  var VERSION = "0.9.7 beta";
+  var VERSION = "0.9.24 beta";
 
   document.documentElement.classList.remove("no-js");
   var here = (location.pathname.split("/").pop() || "index.html").toLowerCase();
@@ -68,6 +71,34 @@
   document.body.insertBefore(top, page);
   document.body.insertBefore(side, top);
   top.querySelector("button").onclick = function () { document.body.classList.toggle("nav-open"); };
+
+  // ---------------------------------------------------------- "New in" tags
+  // <span class="since">New in 0.9.24</span>: online, latest.json says what is out,
+  // so a tag for a version not released yet says so (offline the tag stays as written).
+  function vnum(v) { return String(v).split("-")[0].split(".").map(function (x) { return parseInt(x, 10) || 0; }); }
+  function vcmp(a, b) {
+    var pa = vnum(a), pb = vnum(b);
+    for (var i = 0; i < Math.max(pa.length, pb.length); i++) {
+      var x = pa[i] || 0, y = pb[i] || 0;
+      if (x !== y) return x < y ? -1 : 1;
+    }
+    return 0;
+  }
+  var tags = main.querySelectorAll(".since");
+  if (tags.length && location.protocol.indexOf("http") === 0 && window.fetch) {
+    fetch("latest.json", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      if (!j || !j.stable) return;
+      Array.prototype.forEach.call(tags, function (t) {
+        var m = /(\d+\.\d+\.\d+)/.exec(t.textContent);
+        if (!m) return;
+        if (vcmp(m[1], j.stable.version) > 0) {
+          t.classList.add("soon");
+          t.title = "Not in the released version yet (latest: " + j.stable.version + "). Coming in the next update.";
+          t.textContent = t.textContent + " (next update)";
+        }
+      });
+    }).catch(function () {});
+  }
   main.addEventListener("click", function () { document.body.classList.remove("nav-open"); });
 
   // heading anchors + "on this page"

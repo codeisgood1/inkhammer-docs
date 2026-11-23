@@ -278,3 +278,18 @@ details > div p, details > div li { color: var(--text); }
 
 /* shown only in the Help window inside Ink Hammer (help_export.py) */
 .app-only { display: none; }
+
+/* "New in 0.9.24" tags (docs.js marks ones not released yet) */
+.since { display: inline-block; font-size: 12px; font-weight: 600; line-height: 1; padding: 4px 8px; margin: 0 0 0 8px;
+  border-radius: 999px; background: rgba(127, 191, 122, 0.14); color: var(--ok); border: 1px solid rgba(127, 191, 122, 0.45); vertical-align: middle; }
+.since.soon { background: var(--amber-soft); color: var(--amber); border-color: var(--amber-line); }
+h2 .since, h3 .since { font-size: 11.5px; }
+
+/* picture galleries (looks, styles) and off / on pairs */
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin: 18px 0 28px; }
+.gallery figure, .pair figure { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.gallery img, .pair img { display: block; width: 100%; height: auto; cursor: zoom-in; }
+.gallery figcaption, .pair figcaption { padding: 8px 12px; font-size: 14px; color: var(--muted); }
+.gallery figcaption b, .pair figcaption b { color: var(--text); font-weight: 600; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0 28px; }
+@media (max-width: 640px) { .pair { grid-template-columns: 1fr; } }

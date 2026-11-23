@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cliffs, dunes and hills | Ink Hammer guide</title>
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<main class="doc">
+<div class="crumb">Using Ink Hammer</div>
+<h1>Cliffs, dunes and hills</h1>
+<p class="lede">Raised ground, drops, sand dunes and grassy hills are all one thing in Ink Hammer: a cliff line. Draw the top edge, pick a look, then tune it.</p>
+
+<h2 id="draw">Drawing a cliff</h2>
+<ul>
+  <li>Draw a line with the <span class="ui">Pen</span> (<kbd>P</kbd>), then tick <span class="ui">Cliff</span> in Properties, or pick <span class="ui">Pen &gt; Cliff</span> before you draw.</li>
+  <li>The line is the <b>top edge</b>. <span class="ui">Face depth</span> is how far the side reaches down from it.</li>
+  <li>Close the shape for a plateau. With <span class="ui">Inside is: Low ground</span> a closed shape is a pit instead.</li>
+  <li>The sun lights a cliff by its real shape: the sunny side is bright, ledges catch the light and a shadow falls where the rock meets the ground.</li>
+  <li>Edit the line like any Pen line: drag points, pull curves, change the width of each point. In line edit the orange foot points set where the face meets the ground.</li>
+</ul>
+
+<h2 id="looks">Looks</h2>
+<p><span class="ui">Properties &gt; Cliff &gt; Look</span> sets a whole style in one go. Every setting stays yours to change afterwards. Each picture is a closed outcrop on grass with the afternoon sun from the top left.</p>
+<!-- gallery:cliffs -->
+<div class="gallery">
+  <figure><img class="zoom" loading="lazy" src="img/looks/cliff-new-cliff.jpg" alt="New cliff"><figcaption><b>New cliff</b>: what a new cliff starts with</figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/cliff-sand-dune.jpg" alt="Sand dune"><figcaption><b>Sand dune</b>: sand all the way down, Round top on</figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/cliff-grassy-hill.jpg" alt="Grassy hill"><figcaption><b>Grassy hill</b>: no face: it raises the ground (only its shadow shows here)</figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/cliff-earth-slope.jpg" alt="Earth slope"><figcaption><b>Earth slope</b></figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/cliff-painted-dark-rock.jpg" alt="Painted dark rock"><figcaption><b>Painted dark rock</b></figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/cliff-grey-slabs.jpg" alt="Grey slabs"><figcaption><b>Grey slabs</b></figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/cliff-sandstone-strata.jpg" alt="Sandstone strata"><figcaption><b>Sandstone strata</b></figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/cliff-earth-bank.jpg" alt="Earth bank"><figcaption><b>Earth bank</b></figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/cliff-mountain-blocks.jpg" alt="Mountain blocks"><figcaption><b>Mountain blocks</b></figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/cliff-snowy-rock.jpg" alt="Snowy rock"><figcaption><b>Snowy rock</b></figcaption></figure>
+</div>
+<!-- /gallery -->
+
+<h2 id="breakup">Breakup: ground on the ledges <span class="since">New in 0.9.24</span></h2>
+<p>The ground on top (grass, sand, snow) breaks onto the first ledges in patches and thins out down the face, so a cliff top blends into its rock instead of ending on a hard line. The ground at the foot can creep up the lowest ledges the same way.</p>
+<ul>
+  <li><span class="ui">Properties &gt; Breakup: ground on the ledges</span>: <span class="ui">Top ground</span> and <span class="ui">Foot ground</span> (0 is off), <span class="ui">Reach down</span> and <span class="ui">Reach up</span> (how far along the face), <span class="ui">Patch size</span>.</li>
+  <li>It uses the ground that is there. Pick a <span class="ui">Top texture</span> or <span class="ui">Foot texture</span> to use another.</li>
+  <li>The rock looks start with a little top breakup already on.</li>
+</ul>
+<div class="pair">
+  <figure><img class="zoom" src="img/features/breakup-off.jpg" alt="Cliff face with no breakup"><figcaption><b>Off</b>: the rock ends on a clean line</figcaption></figure>
+  <figure><img class="zoom" src="img/features/breakup-on.jpg" alt="Cliff face with grass breaking onto the ledges"><figcaption><b>Top ground 1</b>: grass on the upper ledges</figcaption></figure>
+</div>
+
+<h2 id="round-top">Round top for dunes and banks <span class="since">New in 0.9.24</span></h2>
+<p>For a side made of the same stuff as the top (sand, earth, turf), <span class="ui">Round top</span> rolls the side over from the top like a dome, so a dune flows into its top with no edge. It is in the <span class="ui">Sides: texture</span> section. 0 is a straight bank, 1 a full dome. The <span class="ui">Sand dune</span> look starts with it on.</p>
+<div class="pair">
+  <figure><img class="zoom" src="img/features/round-top-off.jpg" alt="Sand dune with a straight bank"><figcaption><b>Round top 0</b>: a straight bank</figcaption></figure>
+  <figure><img class="zoom" src="img/features/round-top-on.jpg" alt="Sand dune rolling into its top"><figcaption><b>Round top 1</b>: rolls into the top</figcaption></figure>
+</div>
+
+<h2 id="soft">Soft slopes, dunes and hills</h2>
+<ul>
+  <li><b>Hills</b>: <span class="ui">Style &gt; Soft slope</span> (or the <span class="ui">Grassy hill</span> look) draws no face at all. The shape only raises the ground, so your ground layers show on the slope and the sun shades it. With <span class="ui">Low ground</span> it makes a hollow.</li>
+  <li><b>Dunes and banks</b>: <span class="ui">Style &gt; Texture</span> with a sand or soil texture in <span class="ui">Sides</span>, <span class="ui">Shadow</span> at 0, and <span class="ui">Fade top</span> and <span class="ui">Fade foot</span> to blend the side into the top and the ground. Add <span class="ui">Round top</span> for a rolling dune.</li>
+  <li>Keep a hill low (<span class="ui">Height</span> 4 to 8 ft). At the default 15 ft a hill throws a wall's shadow.</li>
+</ul>
+
+<h2 id="look">Opacity and tint <span class="since">New in 0.9.24</span></h2>
+<p>Cliffs and the spills over them take <span class="ui">Opacity</span> and <span class="ui">Tint</span> in <span class="ui">Properties &gt; Look</span>, like props. Use tint to match a cliff to a palette (a cold blue for a night map, a red rock for a desert). Opacity fades the whole cliff.</p>
+
+<h2 id="props">Props on cliffs and slopes</h2>
+<ul>
+  <li>A prop on a clifftop edge stands on the top when most of it is over the top, and below when most of it is over the drop.</li>
+  <li>In Properties a prop on a slope can <span class="ui">Stand</span>, <span class="ui">Hug the slope</span> or be <span class="ui">Set into the face</span>.</li>
+  <li>A prop lying across the foot of a cliff sits over it cleanly, with no dark band cut across it.</li>
+</ul>
+
+<h3 id="submerge">Submerge: sink a prop into the ground <span class="since">New in 0.9.24</span></h3>
+<p>Half-buried statues, a boulder sunk into sand, a log in mud: <span class="ui">Properties &gt; Submerge</span> fades a prop into the ground from one side, with a ragged soft edge and a touch of dirt along the line. Its shadow shrinks with it.</p>
+<ul>
+  <li><span class="ui">Side</span>: Bottom, Top, Left, Right or All round.</li>
+  <li><span class="ui">How far</span>: how much of the picture is under the ground.</li>
+  <li><span class="ui">Soft edge</span>, <span class="ui">Ragged edge</span> and <span class="ui">Dirt</span> shape the line where it meets the ground.</li>
+</ul>
+<div class="pair">
+  <figure><img class="zoom" src="img/features/submerge-off.jpg" alt="Statue piece lying on sand"><figcaption><b>Off</b>: lying on the sand</figcaption></figure>
+  <figure><img class="zoom" src="img/features/submerge-on.jpg" alt="Statue piece sunk into sand"><figcaption><b>Bottom, How far 0.4</b>: sunk into it</figcaption></figure>
+</div>
+
+<h2 id="tips">Tips</h2>
+<ul>
+  <li>Keep the top's soft edge smaller than the face depth, or the top texture spreads onto the ground below.</li>
+  <li>Overlapping cliff shapes meet as solids.</li>
+  <li>A dark patch that comes and goes on a clifftop as you edit is usually a tall prop's shadow: move the prop or lower its height.</li>
+</ul>
+</main>
+<script src="assets/search.js"></script>
+<script src="assets/docs.js"></script>
+</body>
+</html>

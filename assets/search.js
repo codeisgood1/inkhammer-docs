@@ -43,6 +43,66 @@ window.INK_SEARCH = [
 "t": "\"Ink Hammer isn't answering\"Ink Hammer is closed, or the Local API is off. Open Ink Hammer and tick Tools > Local API for Claude. \"Refused the token\"Untick and tick Tools > Local API for Claude again, then ask Claude to retry. Claude does not list the Ink Hammer toolsCheck the paths in the config: every backslash is written twice (\\\\).Check uv is where the config says: run uv --version in a new PowerShell window.Quit Claude fully and reopen it; closing the window is not enough. \"Lost Ink Hammer during ...\"Ink Hammer stopped mid-task. Restart it; your work is in the autosave if it was not saved"
 },
 {
+"p": "Cliffs, dunes and hills",
+"h": "Cliffs, dunes and hills",
+"u": "cliffs.html",
+"t": "Raised ground, drops, sand dunes and grassy hills are all one thing in Ink Hammer: a cliff line. Draw the top edge, pick a look, then tune it."
+},
+{
+"p": "Cliffs, dunes and hills",
+"h": "Drawing a cliff",
+"u": "cliffs.html#draw",
+"t": "Draw a line with the Pen (P), then tick Cliff in Properties, or pick Pen > Cliff before you draw. The line is the top edge. Face depth is how far the side reaches down from it. Close the shape for a plateau. With Inside is: Low ground a closed shape is a pit instead. The sun lights a cliff by its real shape: the sunny side is bright, ledges catch the light and a shadow falls where the rock meets the ground. Edit the line like any Pen line: drag points, pull curves, change the width of each point. In line edit the orange foot points set where the face meets the ground."
+},
+{
+"p": "Cliffs, dunes and hills",
+"h": "Looks",
+"u": "cliffs.html#looks",
+"t": "Properties > Cliff > Look sets a whole style in one go. Every setting stays yours to change afterwards. Each picture is a closed outcrop on grass with the afternoon sun from the top left. New cliff: what a new cliff starts with Sand dune: sand all the way down, Round top on Grassy hill: no face: it raises the ground (only its shadow shows here) Earth slope Painted dark rock Grey slabs Sandstone strata Earth bank Mountain blocks Snowy rock"
+},
+{
+"p": "Cliffs, dunes and hills",
+"h": "Breakup: ground on the ledges New in 0.9.24",
+"u": "cliffs.html#breakup",
+"t": "The ground on top (grass, sand, snow) breaks onto the first ledges in patches and thins out down the face, so a cliff top blends into its rock instead of ending on a hard line. The ground at the foot can creep up the lowest ledges the same way. Properties > Breakup: ground on the ledges: Top ground and Foot ground (0 is off), Reach down and Reach up (how far along the face), Patch size. It uses the ground that is there. Pick a Top texture or Foot texture to use another. The rock looks start with a little top breakup already on. Off: the rock ends on a clean line Top ground 1: grass on the uppe"
+},
+{
+"p": "Cliffs, dunes and hills",
+"h": "Round top for dunes and banks New in 0.9.24",
+"u": "cliffs.html#round-top",
+"t": "For a side made of the same stuff as the top (sand, earth, turf), Round top rolls the side over from the top like a dome, so a dune flows into its top with no edge. It is in the Sides: texture section. 0 is a straight bank, 1 a full dome. The Sand dune look starts with it on. Round top 0: a straight bank Round top 1: rolls into the top"
+},
+{
+"p": "Cliffs, dunes and hills",
+"h": "Soft slopes, dunes and hills",
+"u": "cliffs.html#soft",
+"t": "Hills: Style > Soft slope (or the Grassy hill look) draws no face at all. The shape only raises the ground, so your ground layers show on the slope and the sun shades it. With Low ground it makes a hollow. Dunes and banks: Style > Texture with a sand or soil texture in Sides, Shadow at 0, and Fade top and Fade foot to blend the side into the top and the ground. Add Round top for a rolling dune. Keep a hill low (Height 4 to 8 ft). At the default 15 ft a hill throws a wall's shadow."
+},
+{
+"p": "Cliffs, dunes and hills",
+"h": "Opacity and tint New in 0.9.24",
+"u": "cliffs.html#look",
+"t": "Cliffs and the spills over them take Opacity and Tint in Properties > Look, like props. Use tint to match a cliff to a palette (a cold blue for a night map, a red rock for a desert). Opacity fades the whole cliff."
+},
+{
+"p": "Cliffs, dunes and hills",
+"h": "Props on cliffs and slopes",
+"u": "cliffs.html#props",
+"t": "A prop on a clifftop edge stands on the top when most of it is over the top, and below when most of it is over the drop. In Properties a prop on a slope can Stand, Hug the slope or be Set into the face. A prop lying across the foot of a cliff sits over it cleanly, with no dark band cut across it."
+},
+{
+"p": "Cliffs, dunes and hills",
+"h": "Submerge: sink a prop into the ground New in 0.9.24",
+"u": "cliffs.html#submerge",
+"t": "Half-buried statues, a boulder sunk into sand, a log in mud: Properties > Submerge fades a prop into the ground from one side, with a ragged soft edge and a touch of dirt along the line. Its shadow shrinks with it. Side: Bottom, Top, Left, Right or All round. How far: how much of the picture is under the ground. Soft edge, Ragged edge and Dirt shape the line where it meets the ground. Off: lying on the sand Bottom, How far 0.4: sunk into it"
+},
+{
+"p": "Cliffs, dunes and hills",
+"h": "Tips",
+"u": "cliffs.html#tips",
+"t": "Keep the top's soft edge smaller than the face depth, or the top texture spreads onto the ground below. Overlapping cliff shapes meet as solids. A dark patch that comes and goes on a clifftop as you edit is usually a tall prop's shadow: move the prop or lower its height."
+},
+{
 "p": "Exporting for play",
 "h": "Exporting for play",
 "u": "export.html",
@@ -418,7 +478,7 @@ window.INK_SEARCH = [
 "p": "The tools",
 "h": "Cliffs, dunes and banks",
 "u": "tools.html#pen",
-"t": "Make a line a cliff in Properties. Close the shape for a plateau (or a pit with Inside is: Low ground). The line is the top edge; Face depth is how far the side reaches down. Look sets a whole style in one go: painted rock, grey slabs, sandstone, earth bank, mountain blocks, snowy rock, Sand dune and Earth slope. Sides: pick a rock face texture, or the Texture style for sand, earth or turf sides with no rock. Runs down the slope lays the texture along the drop; Slope shade darkens it toward the foot. Top: a fill texture for the high ground, and a second texture in patches over it. Fade top and"
+"t": "Every cliff look with a picture, and the newer Breakup, Round top and Submerge settings: Cliffs, dunes and hills. Make a line a cliff in Properties. Close the shape for a plateau (or a pit with Inside is: Low ground). The line is the top edge; Face depth is how far the side reaches down. Look sets a whole style in one go: painted rock, grey slabs, sandstone, earth bank, mountain blocks, snowy rock, Sand dune and Earth slope. Sides: pick a rock face texture, or the Texture style for sand, earth or turf sides with no rock. Runs down the slope lays the texture along the drop; Slope shade darkens "
 },
 {
 "p": "The tools",
@@ -454,7 +514,7 @@ window.INK_SEARCH = [
 "p": "The tools",
 "h": "Walls",
 "u": "tools.html#walls",
-"t": "Draw single walls (outside the Build tool), and add doors, windows and openings to any wall. A wall can be 0 ft tall (Properties > Height): a textured line on the map. It casts no shadow, lets light through and is left out of VTT walls. Walls edit like Pen lines: points, widths, curves. Doors and windows snap to a wall, cut their own opening and slide along it. Open, close, flip, lock or make them one-way. Wall kinds: normal, invisible (for the virtual tabletop only) and terrain (blocks sight, not movement). Walls view (top bar) shows what a virtual tabletop will get."
+"t": "Draw single walls (outside the Build tool), and add doors, windows and openings to any wall. Every wall style with a picture, Lift, Flip and roof blend: Walls and buildings. A wall can be 0 ft tall (Properties > Height): a textured line on the map. It casts no shadow, lets light through and is left out of VTT walls. Walls edit like Pen lines: points, widths, curves. Doors and windows snap to a wall, cut their own opening and slide along it. Open, close, flip, lock or make them one-way. Wall kinds: normal, invisible (for the virtual tabletop only) and terrain (blocks sight, not movement). Walls"
 },
 {
 "p": "The tools",
@@ -509,5 +569,101 @@ window.INK_SEARCH = [
 "h": "Reporting a bug",
 "u": "troubleshooting.html#reporting-a-bug",
 "t": "Help > Report a bug copies your Ink Hammer version, Windows version and graphics card to the clipboard. Paste them into your report with what you did just before it went wrong, and a screenshot if you can."
+},
+{
+"p": "Walls and buildings",
+"h": "Walls and buildings",
+"u": "walls.html",
+"t": "Single walls, fences and hedges come from the Walls tool or any Pen line. Whole buildings with rooms, doors and roofs come from the Build and Roofs tools. This page shows the wall styles and the newer ways to shape them."
+},
+{
+"p": "Walls and buildings",
+"h": "Drawing walls",
+"u": "walls.html#walls",
+"t": "Walls tool (W): click to add points, double-click or Enter to finish. Walls edit like Pen lines: points, widths, curves. Pick a style in the tool panel or in Properties. Height (ft) sets how tall it is for shadows and lighting; a 0 ft wall is a textured line that casts no shadow. Doors and windows snap to a wall, cut their own opening and slide along it. Wall kinds: normal, invisible (for the virtual tabletop only) and terrain (blocks sight, not movement). Walls view in the top bar shows what a virtual tabletop gets."
+},
+{
+"p": "Walls and buildings",
+"h": "Wall styles",
+"u": "walls.html#styles",
+"t": "Every style in the Anvil Pack, drawn as the same corner with the afternoon sun from the top left. Adobe wall Bone wall Braded Rope Candle ledge wall Castle battlement wall Cave rock wall Dark stone wall Fieldstone wall Gallery balustrade Grey-gold marble wall Hedge Iron bars Iron fence Library bookshelf wall Light stone wall Log palisade Picket fence Plank wall Red brick wall Red brick wall (muted) Root tunnel wall Rough stone wall Ruined stone wall Sandstone wall Thick castle wall Timber frame wall Train line Wattle and daub wall Wood wall"
+},
+{
+"p": "Walls and buildings",
+"h": "Lift: walls off the ground New in 0.9.24",
+"u": "walls.html#lift",
+"t": "A railing along a walkway, a beam across a gap, a screen hanging from a ceiling: Properties > Height > Lift (ft) hangs a wall that many feet up. Its shadow lands apart from it and light passes under it, in both the flat and the 3D lighting. Height is still how tall the wall itself is."
+},
+{
+"p": "Walls and buildings",
+"h": "Flip New in 0.9.24",
+"u": "walls.html#flip",
+"t": "Properties > Look > Flip has Left-right and Top-bottom buttons for walls, lines, buildings and roofs. With several things selected they flip as one piece across the middle of the selection: a house with its roof, walls and props mirrors together, and doors keep swinging the mirrored way. F flips a single building or roof. Before Flip left-right: building and roof together Cliffs, waterfalls, spills and fire do not flip: their high side or the way they flow would swap."
+},
+{
+"p": "Walls and buildings",
+"h": "Roof blend New in 0.9.24",
+"u": "walls.html#roof-blend",
+"t": "A drawn roof (Roofs tool) has Blend in Properties > Look: Normal, Multiply, Add or Subtract. The roof keeps its sun and lamp shading. Multiply with a lower opacity makes a shadowy overhang that lets the floor and walls show through. Normal Multiply, opacity 0.8: rooms show through Screen, Overlay and the other blends are not offered for drawn roofs: a roof is lit as it is drawn, and those blends would light what is under it a second time. Roof layers (painted roofs) take every blend."
+},
+{
+"p": "Walls and buildings",
+"h": "Selecting several things",
+"u": "walls.html#selection",
+"t": "A box drag picks everything the box touches, by its real shape. With different kinds of things selected, Properties shows only the settings they all have. Turning or scaling a building with R and [ ] works like the mouse: the walls keep their thickness, and a turned building's box turns with it."
+},
+{
+"p": "What's new",
+"h": "What's new",
+"u": "whats-new.html",
+"t": "What changed in each version. Your version is in Help > About Ink Hammer; Help > Check for updates says whether a newer one is out. Through the guide, a New in 0.9.24 tag marks what a version added."
+},
+{
+"p": "What's new",
+"h": "0.9.24 New in 0.9.24",
+"u": "whats-new.html#v0-9-24",
+"t": ""
+},
+{
+"p": "What's new",
+"h": "Cliffs, dunes and hills",
+"u": "whats-new.html#cliffs-dunes-and-hills",
+"t": "Cliffs are lit by their real shape: ledges catch the light, risers turn with the sun (also by lamplight), and a shadow lies where the rock meets the ground on the shaded side. Sandstone strata and Earth bank light layer by layer. Cliffs, dunes and hills New Breakup: the ground on top breaks onto the first ledges in patches, and the ground at the foot can creep up the lowest ones. Breakup New Round top for dunes and banks: the side rolls over from the top like a dome. Round top Cliff looks retuned: Earth slope is brown earth, Grassy hill is a low hill, the rock looks have breakup on, and a new "
+},
+{
+"p": "What's new",
+"h": "Props",
+"u": "whats-new.html#props",
+"t": "New Submerge: sink a prop into the ground from any side, with a ragged soft edge and a touch of dirt. Submerge A prop lying across the foot of a cliff no longer has a dark band cut across it."
+},
+{
+"p": "What's new",
+"h": "Walls, buildings and roofs",
+"u": "whats-new.html#walls-buildings-and-roofs",
+"t": "Flip for walls, lines, buildings and roofs, and a whole selection as one piece. F flips a building or roof. Flip Lift for walls: railings, beams and screens hang off the ground. Lift Drawn roofs take Blend (Multiply, Add, Subtract); roof layers take every blend. Roof blend Walls and buildings with Casts shadow off no longer throw shadows in the 3D lighting."
+},
+{
+"p": "What's new",
+"h": "Water",
+"u": "whats-new.html#water",
+"t": "The sea: waves keep their direction past ships and rocks, crests and troughs show in a still, a ship's wake fades into dashes. The sea looks are retuned to one painted style. Rivers show which way they flow. Clear stream, Lake, Murky river and Swamp have the painted look; banks have light shallows and brush-stroke ripples. Waterfalls break into falling strands, show a bright roll over the lip and take the colour of the water they pour into. Spills over cliffs land in smooth broken white water, and rocks show through the water running over them."
+},
+{
+"p": "What's new",
+"h": "Selecting and Properties",
+"u": "whats-new.html#selecting-and-properties",
+"t": "A box drag picks everything it touches by its real shape. With different kinds of things selected, Properties shows only the settings they all have. Every kind of thing shows its settings in the same order, and settings that do nothing for it are hidden. A turned building's selection box turns with it. R and [ ] turn and scale a building like the mouse does. Waterfalls, fire and cliffs are clicked near their centre line, so small falls stay easy to pick. Properties gets most of the right column; the 3D view starts folded."
+},
+{
+"p": "What's new",
+"h": "Speed and fixes",
+"u": "whats-new.html#speed-and-fixes",
+"t": "Maps open about a third faster. Water no longer flashes white as a map opens, and the map no longer blinks a few seconds after opening. Several undo fixes: a coast, a sea look change and the Fog command are each one Ctrl+Z."
+},
+{
+"p": "What's new",
+"h": "0.9.23 (Beta 2)",
+"u": "whats-new.html#v0-9-23",
+"t": "The current stable release (November 16, 2026). Earlier versions are listed on the store pages."
 }
 ];
