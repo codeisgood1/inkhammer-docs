@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The main window | Ink Hammer guide</title>
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<main class="doc">
+<div class="crumb">Using Ink Hammer</div>
+<h1>The main window</h1>
+<p class="lede">The map fills the window and the panels float around it. Click a number, or use the arrow keys, to step through every part.</p>
+
+<div class="tour" data-shot="editor" data-img="img/editor.jpg" data-alt="The Ink Hammer editor">
+  <ol class="tour-list">
+    <li data-spot="menus"><b>Menus</b><span class="ui">File</span> (new, open, save, export, package, settings), <span class="ui">Edit</span> (undo, copy, paste, copy settings), <span class="ui">View</span> (fit, grid, size references, fast editing), <span class="ui">Window</span> (show or hide panels), <span class="ui">Tools</span> (Claude connection, Asset Manager, prefab builder, specialized tools), <span class="ui">Plugins</span> and <span class="ui">Help</span>.</li>
+    <li data-spot="title"><b>Map name and scenes</b>The open map, then its scenes. Scenes are versions of the same map (day and night, before and after the battle). Click <span class="ui">+</span> to add one.</li>
+    <li data-spot="rail"><b>Tool rail</b>The tools, top to bottom in the order you usually build a map: Select, Paint, Pen, Height, Place, Build, Roofs, Lights, Walls, Labels, Grid. Hover a tool for its name and shortcut. See <a href="tools.html">The tools</a>.</li>
+    <li data-spot="options"><b>Tool options</b>Settings for the tool you are using. The <span class="ui">?</span> button on its title shows how-to tips for that tool.</li>
+    <li data-spot="map" data-pin="center"><b>The map</b>Drag with the middle mouse button (or hold <kbd>Space</kbd> and drag) to pan, turn the wheel to zoom, press <kbd>F1</kbd> to fit the whole map. The <span class="ui">+</span> on each edge makes or opens the map next door.</li>
+    <li data-spot="toggles"><b>View switches</b><span class="ui">Grid</span> and <span class="ui">Snap</span> on or off, <span class="ui">Walls view</span> (shows the walls, doors and windows a virtual tabletop will get), <span class="ui">Labels</span> (show or hide all labels), and <span class="ui">Book view</span> (the map in grayscale, as it prints in a black and white book; sliders for brightness, contrast and midtones, and <span class="ui">Page size</span> to zoom to about print size. Export &gt; Book saves that look).</li>
+    <li data-spot="speed"><b>Speed switches</b>Sun shadows, lamp shadows, contact shade (AO), animation, draft detail and the void, then the render scale. Turning these off makes the editor faster. They only change the editor: exports always have everything. See <a href="lighting.html#speed-switches">Speed switches</a>.</li>
+    <li data-spot="levels"><b>Levels</b>Floors above and below this one (a cellar, an upper storey). The level below shows through where this one has no ground.</li>
+    <li data-spot="layers"><b>Layers</b>Everything on the map sits on a layer. Drag to reorder, click the eye to hide, the lock to lock. Right-click for more. See <a href="layers.html">Layers</a>.</li>
+    <li data-spot="properties"><b>Properties</b>Settings for what is selected: an object, a layer, a light, a wall. With nothing selected it shows the current layer.</li>
+    <li data-spot="assets"><b>Assets</b>The art library. Pick a folder, search by name or tag, then click a picture and click the map to place it. The <span class="ui">Prefabs</span> tab holds ready-made groups (a loaded cart, a market stall).</li>
+    <li data-spot="status"><b>Status bar</b>Hints for the tool you are using on the left. On the right: speed (frames per second), counts of objects and lights, the current layer and the zoom.</li>
+  </ol>
+</div>
+
+<h2>Panels</h2>
+<p>Panels dock like Photoshop's: along the left, along the right and along the bottom, stacked, or floating over the map.</p>
+<ul>
+  <li><b>Move a panel:</b> press on any empty part of its title bar and drag. Near the left or right column or the bottom, a blue box shows where it will go and the panels there make room when you let go. Let go over the map and it floats.</li>
+  <li><b>Resize:</b> edges light up orange under the mouse. Drag the line between two docked panels to share the room differently, a column's edge to make it wider or narrower, the top of the bottom panels to make them taller.</li>
+  <li><b>A panel's own height:</b> drag the outer top or bottom line of a docked panel (one with no other panel against it) and it keeps that height, held at the other edge: drag the 3D view's top line down and it shrinks to the bottom of its column. Double-click that line to let it share the column again.</li>
+  <li>A panel at the bottom of the left column, below the tool buttons, fills the corner under them.</li>
+  <li><b>Tool buttons:</b> drag them by the small handle at the top; drag them to the left edge to put them back.</li>
+  <li><b>Floating panels</b> resize from every edge and corner. Double-click a floating panel's title to put it back in its dock.</li>
+  <li>Resizing never docks a panel; only dragging its title bar does.</li>
+  <li>The arrow on a title folds the panel up to its title bar.</li>
+  <li>Lost a panel, or a layout in a tangle? <span class="ui">Window</span> lists every panel (tick one to bring it back), and <span class="ui">Window &gt; Reset layout</span> puts them all back.</li>
+</ul>
+
+<h2 id="levels">Levels</h2>
+<ul>
+  <li><span class="ui">+ Level above</span> and <span class="ui">+ Level below</span> (top right of the map) make a floor above or below this one, each its own map in the same folder. The set button next to the file name (<span class="ui">Upper floor (3 maps)</span>) opens any of them.</li>
+  <li>Wherever a level has no ground painted (or a hole in a building's floor), the level below shows through, lined up with it at 100% scale. <span class="ui">Level look...</span> sets its blur, haze, scale and shift, or a <span class="ui">Background image</span> of your own (a sea, clouds, a city far below) instead.</li>
+  <li>The picture of a level is taken when you save it or leave it. After changing a lower level, save it so the levels above show the change.</li>
+  <li>A violet fill where the level below should be means there is no picture of it yet (open it and save once) or its file has moved; the status bar says which.</li>
+  <li><span class="ui">File &gt; Save As</span> on a level offers to copy the whole set into the new folder, so the links keep working.</li>
+</ul>
+
+<h2>Moving around the map</h2>
+<table>
+  <tr><th>To do this</th><th>Do this</th></tr>
+  <tr><td>Pan</td><td>Middle mouse drag, or hold <kbd>Space</kbd> and drag</td></tr>
+  <tr><td>Zoom</td><td>Mouse wheel, or the <span class="ui">-</span> and <span class="ui">+</span> in the status bar</td></tr>
+  <tr><td>See the whole map</td><td><kbd>F1</kbd> or <span class="ui">Fit</span> in the status bar</td></tr>
+  <tr><td>Get out of anything</td><td><kbd>Esc</kbd> cancels what you are doing, then goes back to the Select tool</td></tr>
+</table>
+
+<h2>Selecting and changing things</h2>
+<p>With the Select tool (<kbd>V</kbd>):</p>
+<ul>
+  <li>Click to select, drag to move. Drag a corner to scale, drag just outside a corner to turn.</li>
+  <li>Drag on an empty part of the map to draw a box round several things. <kbd>Shift</kbd>+click adds or removes one. <kbd>Alt</kbd>+click picks the next thing in a stack.</li>
+  <li><kbd>Ctrl</kbd>+drag drags out a copy. <kbd>Ctrl</kbd>+<kbd>D</kbd> duplicates.</li>
+  <li><kbd>R</kbd> and <kbd>Shift</kbd>+<kbd>R</kbd> turn 15 degrees, <kbd>F</kbd> mirrors, <kbd>[</kbd> and <kbd>]</kbd> scale, arrow keys nudge.</li>
+  <li>Right-click anything for its menu: tint, flip, turn 90 degrees, bring to front, move to a layer, group into a layer, add a mask, link, make a prefab, distort, hide, lock, delete. Buildings and roofs have one too, with <span class="ui">Properties...</span> and <span class="ui">Edit walls, rooms and doors</span>.</li>
+  <li>The number box beside a slider takes the value in the units it shows: type 3 in a door width shown in feet and press <kbd>Enter</kbd> for a 3 ft door.</li>
+  <li>With two or more things picked, the align bar over the map lines them up in a row or column, or spaces them evenly. It works on the points of a line you are editing and on Build-tool corners too.</li>
+  <li>Anything past the edge of the map (a prop hanging over it, a side map) sits under a grey veil, so you can see where the map ends. You can still click and edit it; exports are not affected.</li>
+</ul>
+<div class="callout tip"><b>Copy a look</b><p><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> copies how one thing looks; <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> pastes that look onto others of the same kind.</p></div>
+</main>
+<script src="assets/shots.js"></script>
+<script src="assets/search.js"></script>
+<script src="assets/docs.js"></script>
+</body>
+</html>

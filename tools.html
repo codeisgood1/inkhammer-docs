@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The tools | Ink Hammer guide</title>
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<main class="doc">
+<div class="crumb">Using Ink Hammer</div>
+<h1>The tools</h1>
+<p class="lede">The tool rail on the left, in the order you usually build a map. Pick a tool below to see its panel and what it does. Click any picture to see it full size.</p>
+
+<div class="tabs" id="tools">
+
+<section class="tab" id="select" data-title="Select" data-key="V">
+  <h2>Select</h2>
+  <p>Click, move, scale and turn anything on the map. This is where you end up after placing something, and <kbd>Esc</kbd> always brings you back here.</p>
+  <ul>
+    <li>Drag a corner to scale, just outside a corner to turn. Arrow keys nudge (<kbd>Shift</kbd> moves further).</li>
+    <li>Drag on empty map to box-select. <kbd>Ctrl</kbd>+drag drags out a copy.</li>
+    <li>Right-click for the object menu: tint, flip, turn 90 degrees, front or back, move to layer, link (<kbd>Ctrl</kbd>+<kbd>G</kbd>), make a prefab, distort, hide (<kbd>H</kbd>), lock (<kbd>Ctrl</kbd>+<kbd>L</kbd>).</li>
+    <li>Properties (right) shows the settings of what you picked: size, height in feet, opacity, blend, lit by the sun, casts shadows.</li>
+    <li>Pick two or more things (or two or more points of a line while editing it) and the bar over the map shows <span class="ui">Align in a row</span>, <span class="ui">Align in a column</span>, <span class="ui">Space evenly across</span> and <span class="ui">Space evenly down</span> (spacing needs three or more; the end ones stay put).</li>
+    <li>Distort (right-click &gt; Distort...): drag the corners, edges or grid lines to bend the picture (<kbd>Shift</kbd> keeps a move straight). To cut your own lines, turn on <span class="ui">Slice</span> (<kbd>S</kbd>) and click or drag along an edge or line where you want the cut: a new line runs across the picture there, with points you can drag. <kbd>Shift</kbd> snaps the cut to eighths, <kbd>Alt</kbd>+click removes a line. <span class="ui">+ Column</span> / <span class="ui">+ Row</span> split the widest part in half. <kbd>Enter</kbd> or <kbd>Esc</kbd> when done.</li>
+  </ul>
+</section>
+
+<section class="tab" id="paint" data-title="Paint" data-key="B">
+  <h2>Paint</h2>
+  <div class="side-by-side">
+    <div>
+      <p>Paints ground textures, water, roofs and the void (the darkness around a cave) onto the current layer. Pick a ground, water or void layer in Layers first; the panel changes with the layer kind.</p>
+      <ul>
+        <li>Brush size, strength, softness and a rough edge that follows the texture (stones and tufts show first).</li>
+        <li><kbd>Ctrl</kbd>+drag on the map changes the brush size and softness.</li>
+        <li>Hold <kbd>Shift</kbd> while painting for a straight line: it runs along whichever way the stroke first moves. Let go of <kbd>Shift</kbd> to paint freely again.</li>
+        <li>Shape modes paint rectangles or click-the-corners shapes, handy for water and roofs.</li>
+        <li>Each ground layer has its own look: turn, scale, tint, brightness, contrast.</li>
+        <li>The row of buttons at the top of the panel adds a new paint layer at any time: ground, water, void, mist, roof or rain. The kind you are painting now is lit up.</li>
+      </ul>
+    </div>
+    <figure><img class="zoom" src="img/panel-paint.jpg" alt="Paint tool panel"></figure>
+  </div>
+  <figure class="shot"><img src="img/tool-paint.jpg" alt="Paint tool"></figure>
+</section>
+
+<section class="tab" id="pen" data-title="Pen" data-key="P">
+  <h2>Pen</h2>
+  <div class="side-by-side">
+    <div>
+      <p>Draw any line, then decide what it is: a path, bridge, wall, cliff, waterfall, fire, a line of assets, a floor or stairs.</p>
+      <ul>
+        <li>Click to add points. Double-click, <kbd>Enter</kbd> or right-click finishes; click the first point to close the shape. Hold <kbd>Shift</kbd> as you finish to draw another.</li>
+        <li>Change what a line is (path, wall, cliff...) any time in Properties.</li>
+        <li>Each point has its own width. Right-click a point or segment to split, delete, straighten, bend or close the shape.</li>
+        <li>Paths take textured style sets with end caps and corners. A bridge has its own deck height and casts a shadow into the drop.</li>
+        <li><span class="ui">Pen &gt; Stairs</span> drags out freestanding stairs anywhere. Pick a look in Properties: Hewn block, Worn temple, Ruined, Rough cave, Dark wood or Weathered planks each mix their own step pieces and colour, so two flights on one map need not look the same.</li>
+      </ul>
+    </div>
+    <figure><img class="zoom" src="img/panel-path.jpg" alt="Pen tool panel"></figure>
+  </div>
+  <h3>Curves and handles</h3>
+  <ul>
+    <li>Click and drag while drawing to pull a point out into a curve. The yellow handle shows the curve's direction.</li>
+    <li>Drag the square at the end of a yellow handle to turn the curve. The other side turns with it, so the line stays smooth. Hold <kbd>Alt</kbd> to break the point and move one side on its own, for a sharp twist.</li>
+    <li>Handles snap back to a standard length (about a third of the way to the next point) when you let go. Hold <kbd>Shift</kbd> as you let go to keep the length you dragged.</li>
+    <li>On a finished line, double-click it to edit, then click a point in <span class="ui">Move points</span> or <span class="ui">Curve</span> mode to see its handles. A sharp point shows faded handles: drag one to make it a smooth curve point.</li>
+    <li>This works for every Pen line: paths, walls, cliffs, waterfalls and fire.</li>
+  </ul>
+  <h3>Ropes, beams and garlands</h3>
+  <ul>
+    <li>A line that lies on something (a rope along a dock, a beam across a gap) gets <span class="ui">Lift (ft)</span> and <span class="ui">Thickness (ft)</span> in <span class="ui">Properties &gt; Sun</span>, in steps down to 0.05 ft.</li>
+    <li>Set <span class="ui">Lift</span> to the height of what it lies on, so it takes the light up there instead of that thing's shadow. A <span class="ui">Thickness</span> above 0 makes it cast its own thin shadow (about 0.2 for a rope). Both work with 3D lighting.</li>
+  </ul>
+  <h3>Cliffs, dunes and banks</h3>
+  <ul>
+    <li>Make a line a cliff in Properties. Close the shape for a plateau (or a pit with <span class="ui">Inside is: Low ground</span>). The line is the top edge; <span class="ui">Face depth</span> is how far the side reaches down.</li>
+    <li><span class="ui">Look</span> sets a whole style in one go: painted rock, grey slabs, sandstone, earth bank, mountain blocks, snowy rock, <span class="ui">Sand dune</span> and <span class="ui">Earth slope</span>.</li>
+    <li><span class="ui">Sides</span>: pick a rock face texture, or the <span class="ui">Texture</span> style for sand, earth or turf sides with no rock. <span class="ui">Runs down the slope</span> lays the texture along the drop; <span class="ui">Slope shade</span> darkens it toward the foot.</li>
+    <li><span class="ui">Top</span>: a fill texture for the high ground, and a second texture in patches over it.</li>
+    <li><span class="ui">Fade top</span> and <span class="ui">Fade foot</span> blend the side into the top and into the ground. With <span class="ui">Shadow</span> at 0 this makes a soft dune or bank instead of a hard edge.</li>
+    <li>Keep the top's soft edge smaller than the face depth, or the top texture spreads onto the ground below.</li>
+    <li><b>Foot line</b>: in line edit, drag the orange foot points to set where the face meets the ground: a gentle slope, a bulging face, a foot tucked under the top. Foot points have curve handles (<kbd>Alt</kbd> breaks the pair). <span class="ui">Properties &gt; Cliff &gt; Reset foot</span> puts it back.</li>
+    <li><b>Soft slopes</b> for hills: <span class="ui">Style &gt; Soft slope</span> (or the <span class="ui">Grassy hill</span> look) draws no rock face. The ground shows through and the shape only raises it, so the sun and lamps shade the slope and it casts real shadows. The width is how long the slope is; with <span class="ui">Low ground</span> it makes a hollow.
+      A soft slope has no sides of its own, so it takes no side texture: the slope shows your ground layers. <span class="ui">Fade top</span> and <span class="ui">Fade foot</span> fade the top texture out over its edge.</li>
+    <li><b>Dunes and banks</b> with sand or soil all the way down: <span class="ui">Style &gt; Texture</span> (or the <span class="ui">Sand dune</span> look), a sand texture in <span class="ui">Sides</span> with <span class="ui">Texture colours</span> on, <span class="ui">Shadow</span> at 0, and <span class="ui">Fade top</span> and <span class="ui">Fade foot</span> to blend the side into the top and the ground. The top texture runs on under the whole top fade.</li>
+    <li>Overlapping cliff shapes meet as solids. New cliffs start with a top fill of the ground they were drawn on.</li>
+    <li>Objects on a clifftop edge stand by the 60% rule: mostly over the top, they stand on it; mostly over the drop, they stand below. In Properties an object on a slope can <span class="ui">Stand</span>, <span class="ui">Hug the slope</span> or be <span class="ui">Set into the face</span>.</li>
+    <li>Bridge lines and bridge pieces (planks, logs, beams) rest on the ground under each end and run straight between them. Select a point on a bridge line to give it its own height.</li>
+    <li>Tall props near a clifftop edge cast their sun shadow across the top. If a dark patch comes and goes as you move the edge, it is a prop's shadow: move the prop or lower its height.</li>
+  </ul>
+  <figure class="shot"><img src="img/tool-path.jpg" alt="Pen tool"></figure>
+</section>
+
+<section class="tab" id="height" data-title="Height" data-key="T">
+  <h2>Height</h2>
+  <div class="side-by-side">
+    <div>
+      <p>Raise and lower the ground. Hills shade themselves, cliff tops get an ink line, and low ground is hazier, like a hand-drawn map.</p>
+      <ul>
+        <li>Modes: Raise, Lower, Flatten, Smooth, Cliff (terraces) and Level (an exact height).</li>
+        <li>Steep ground can show a cliff texture or a cliff set laid along every drop.</li>
+        <li>Show heights draws the height map over the map; the status bar shows the height under the cursor.</li>
+        <li>For sharp drawn cliffs, use <span class="ui">Pen</span> and make the line a cliff.</li>
+      </ul>
+    </div>
+    <figure><img class="zoom" src="img/panel-height.jpg" alt="Height tool panel"></figure>
+  </div>
+  <figure class="shot"><img src="img/tool-height.jpg" alt="Height tool"></figure>
+</section>
+
+<section class="tab" id="place" data-title="Place">
+  <h2>Place</h2>
+  <p>Places the art you picked in the Assets panel at the bottom of the window.</p>
+  <ol>
+    <li>Choose a folder or type in <span class="ui">Search assets</span> (names and tags both work).</li>
+    <li>Click a picture, then click the map. You go back to Select with the object ready to move.</li>
+    <li>Hold <kbd>Shift</kbd> while clicking the map to place several in a row.</li>
+  </ol>
+  <p>The <span class="ui">Prefabs</span> tab places ready-made groups the same way. Each asset knows its size in squares and its height in feet, so it lands at the right scale and casts the right shadow.</p>
+  <figure class="shot"><img src="img/editor.jpg" alt="The Assets panel along the bottom"><figcaption>The Assets panel runs along the bottom of the window.</figcaption></figure>
+</section>
+
+<section class="tab" id="build" data-title="Build" data-key="U">
+  <h2>Build</h2>
+  <div class="side-by-side">
+    <div>
+      <p>Draw rooms; the walls, floors, ink lines and doors are made for you. Thick walls go outside, thin ones between rooms.</p>
+      <ul>
+        <li>Draw a rectangle or click the corners of any shape. Draw inside a room to split it, beside it to add on.</li>
+        <li><span class="ui">Round room</span>: drag a box for a circle or oval with smooth curved walls (a tower, a well house, a hut). Right-click a room in the Build tool &gt; <span class="ui">Make round</span> turns a room drawn as many short sides into a clean circle or oval. Doors and windows stay where they were.</li>
+        <li>The tool bar over the map has the modes: rooms, wall lines, doors and windows, stairs, cut away, merge rooms (<kbd>M</kbd>).</li>
+        <li>Doors have a hinge side, swing and open angle; windows have glass; archways leave a gap.</li>
+        <li>Move, turn, flip or scale a whole building and the walls keep their thickness. Turning or sizing it turns and sizes the floor picture with it (a flip leaves the floor picture as it was).</li>
+        <li>Right-click a wall &gt; <span class="ui">Delete this wall segment (corner to corner)</span> opens that wall. It stays open when you drag the other walls or corners, and light and shadow pass through the whole gap. To put it back, click the gap and press <kbd>Delete</kbd>.</li>
+        <li><span class="ui">Add a roof</span> covers the building with a roof you can then shape in the Roofs tool.</li>
+        <li><span class="ui">Curve</span> mode makes Bezier walls, like the Pen: drag a wall to bow it, drag out of a corner to pull smooth handles, drag a handle to shape the curve (<kbd>Alt</kbd> moves just that side). Double-click a corner to make it sharp again, a wall to straighten it. Adding a corner on a curved wall splits the curve and keeps its shape. Doors and windows on a curved wall bend with it.</li>
+        <li><kbd>Shift</kbd>+click corners to pick several: drag one to move them all, arrows nudge, <kbd>Delete</kbd> removes them, and the align bar over the map lines them up or spaces them.</li>
+        <li>Pick a room for <span class="ui">Raised floor</span> (a quarterdeck, a stage, a dais) and <span class="ui">Wall height</span> (a ship's rail at 3 ft, a cabin at 8 ft). Props, lamps and stairs on a raised floor stand that high and its edge casts a shadow. Delete the wall between a raised room and the one below for an open step. For a ship, untick <span class="ui">Roofed</span> so the deck gets the sun.</li>
+        <li>Floors and walls without walls: set <span class="ui">Walls &gt; Height</span> to 0 (or press <span class="ui">Floor only (no walls)</span>) for a dock, a deck or a stage: just the floor with an ink edge, no wall art, no wall shadows. A single room can do the same with its own <span class="ui">Wall height</span> at 0; a wall it shares with a walled room keeps that room's height. <span class="ui">Roofed</span> is a toggle: under Walls for the whole building, and on each selected room. Untick it for a deck or a courtyard so the sun reaches the floor.</li>
+        <li><span class="ui">Lift</span> (Properties &gt; Floor, or <span class="ui">Floor</span> in the Build tool): raise the whole building, its 1 ft thick floor and its walls, this many ft over the highest ground under its corners, like a prop's Lift. The ground, water or chasm under it stays, so a lifted dock across a river or a chasm is a bridge with its shadow below, and props on it stand on it.</li>
+        <li>Pictures for the floor, the wall fill and the wall art are buttons: click one to open the picker, with a search box and <span class="ui">Textures</span> or <span class="ui">Everything</span> (any picture in your library, such as grass as a floor). The panel is split into <span class="ui">Building</span>, <span class="ui">Floor</span> and <span class="ui">Walls</span>.</li>
+        <li>Colours: right-click a building &gt; <span class="ui">Tint</span> colours its floors and walls; <span class="ui">Floor &gt; Colour</span> colours the floor only, for the whole building or one room (select it).</li>
+        <li><span class="ui">Merge</span> joins the picked rooms into one room with one outline, so no line or stray corners stay where they met. Rooms merged in older builds: press <span class="ui">Tidy &gt; Clean up</span>. Clean up also drops deleted-wall marks that no longer sit on any wall.</li>
+        <li><span class="ui">Floor hole</span>: an opening in a room's floor (a hatch, a stairwell, a gap in a deck). Pick <span class="ui">Rectangle</span>, <span class="ui">Round</span> or <span class="ui">Shape</span> (click the corners) and draw it inside a room. The walls stay and the hole gets an ink edge; on a level above, the level below shows through it. Click a hole in <span class="ui">Select / move</span> to drag it, drag its corners to reshape it, nudge it with the arrow keys, or set its <span class="ui">Width</span>, <span class="ui">Depth</span> and <span class="ui">Edge</span> (ink line, raised lip, none) in the panel. Right-click its edge to add a corner, a corner to remove it.</li>
+        <li>Stairs: <span class="ui">Fade to</span> runs the steps toward a colour along the flight, going up or down. Lower its alpha (transparency) and the steps fade out toward the far end; steps faded nearly out cast no shadow.</li>
+        <li>Distort a flight (right-click &gt; <span class="ui">Distort...</span>) to bend it: the steps, the well and their shadows follow the new shape.</li>
+        <li><span class="ui">Edit &gt; Copy settings</span> on stairs copies their look (art, colour, fade) onto every flight you paste it on.</li>
+        <li>A ship at sea: pick the building and tick <span class="ui">Under way</span> under <span class="ui">Sailing</span> in Properties (shown when the map has water). The water draws a bow wave, a foam line along the hull, a V of waves behind it and churned water astern. Drag the blue arrow to turn the heading; <span class="ui">V lines</span> sets how far the two white lines of the V run back from the bow. Speed 0 leaves it at anchor with just the foam line.</li>
+      </ul>
+    </div>
+    <figure><img class="zoom" src="img/panel-structure.jpg" alt="Build tool panel"></figure>
+  </div>
+  <figure class="shot"><img src="img/tool-structure.jpg" alt="Build tool"></figure>
+</section>
+
+<section class="tab" id="roofs" data-title="Roofs">
+  <h2>Roofs</h2>
+  <div class="side-by-side">
+    <div>
+      <p>Draw roofs and shape them: hip, gable, shed, flat, cone, dome and barrel.</p>
+      <ul>
+        <li><span class="ui">Shapes</span>: drag out a rectangle, round, octagon, L, T, U or cross. Hold <kbd>Shift</kbd> to add to a roof, <kbd>Alt</kbd> to cut from it.</li>
+        <li><span class="ui">Edit lines</span>: drag the ridge, hips and corners; double-click a line to add a point and bend it; drag two points together to join them. Right-click an end to make it a gable or a hip.</li>
+        <li><span class="ui">Draw line</span>: draw a line across a roof to split a slope.</li>
+        <li><span class="ui">Faces</span>: give any slope its own texture, size and turn. Double-click a slope in Edit lines for quick turns.</li>
+        <li>Ridge and hip caps, a gutter along the eave, and a faint shadow under both.</li>
+        <li><span class="ui">Eave height</span> is how high the bottom edge sits above the ground. It sets shadow length.</li>
+      </ul>
+    </div>
+    <figure><img class="zoom" src="img/panel-roof.jpg" alt="Roofs tool panel"></figure>
+  </div>
+  <figure class="shot"><img src="img/tool-roof.jpg" alt="Roofs tool"></figure>
+</section>
+
+<section class="tab" id="lights" data-title="Lights" data-key="L">
+  <h2>Lights</h2>
+  <div class="side-by-side">
+    <div>
+      <p>Set the daylight and the sun, and place lamps.</p>
+      <ul>
+        <li><span class="ui">Scene darkness</span>: Day, Dusk, Night, Cave. <span class="ui">Daylight</span> is how bright the shadows are.</li>
+        <li><span class="ui">Master light</span>: the sun or moon, where it comes from, how high, how strong, and whether it casts shadows.</li>
+        <li><span class="ui">New light</span>: torch, candle, campfire, brazier, magic, spotlight, floodlight, window, fireplace, moonlight. Click a preset, then click the map.</li>
+        <li>Drag a lamp's handles to change its reach, falloff, aim and width.</li>
+      </ul>
+      <p>More in <a href="lighting.html">Light and shadow</a>.</p>
+    </div>
+    <figure><img class="zoom" src="img/panel-light.jpg" alt="Lights tool panel"></figure>
+  </div>
+  <figure class="shot"><img src="img/tool-light.jpg" alt="Lights tool"></figure>
+</section>
+
+<section class="tab" id="walls" data-title="Walls" data-key="W">
+  <h2>Walls</h2>
+  <div class="side-by-side">
+    <div>
+      <p>Draw single walls (outside the Build tool), and add doors, windows and openings to any wall.</p>
+      <ul>
+        <li>A wall can be 0 ft tall (Properties &gt; Height): a textured line on the map. It casts no shadow, lets light through and is left out of VTT walls.</li>
+        <li>Walls edit like Pen lines: points, widths, curves.</li>
+        <li>Doors and windows snap to a wall, cut their own opening and slide along it. Open, close, flip, lock or make them one-way.</li>
+        <li>Wall kinds: normal, invisible (for the virtual tabletop only) and terrain (blocks sight, not movement).</li>
+        <li><span class="ui">Walls view</span> (top bar) shows what a virtual tabletop will get.</li>
+      </ul>
+    </div>
+    <figure><img class="zoom" src="img/panel-wall.jpg" alt="Walls tool panel"></figure>
+  </div>
+  <figure class="shot"><img src="img/tool-wall.jpg" alt="Walls tool"></figure>
+</section>
+
+<section class="tab" id="labels" data-title="Labels" data-key="N">
+  <h2>Labels</h2>
+  <div class="side-by-side">
+    <div>
+      <p>Notes for the game master (a trap, a monster, stairs down) that sit over everything and are never lit.</p>
+      <ul>
+        <li>Click to add a label, double-click to type in it. <kbd>Ctrl</kbd>+<kbd>B</kbd>, <kbd>I</kbd> and <kbd>U</kbd> for bold, italic and underline.</li>
+        <li>Pull arrows out of the box edge and aim them. Drop a tip back on the box to remove it.</li>
+        <li><span class="ui">Show in exports</span> decides whether a label goes into exported pictures. Export can also write a DM copy and a clean player copy.</li>
+      </ul>
+    </div>
+    <figure><img class="zoom" src="img/panel-label.jpg" alt="Labels tool panel"></figure>
+  </div>
+  <figure class="shot"><img src="img/tool-label.jpg" alt="Labels tool"></figure>
+</section>
+
+<section class="tab" id="grid" data-title="Grid" data-key="G">
+  <h2>Grid</h2>
+  <p>Turns and resizes the snap guide, so you can line things up with a building drawn at an angle. The map's own grid never moves, so exports and virtual tabletops stay aligned.</p>
+  <ul>
+    <li>Square, pointy hex and flat hex grids. Snap to corners, centres or edge middles.</li>
+    <li>Hold <kbd>Alt</kbd> while placing to ignore the snap.</li>
+    <li>Grid line colour and strength are in <span class="ui">File &gt; Settings</span>.</li>
+  </ul>
+</section>
+
+</div>
+
+<h2 id="specialized-tools">Specialized tools</h2>
+<p>Less common tools live in <span class="ui">Tools &gt; Specialized</span> so they do not crowd the rail:</p>
+<ul>
+  <li><b>Waterfall</b>: a fall between two water levels with a plunge pool, spray and mist. Click the lip where the water tips over, then where it lands (more clicks bend it); double-click, <kbd>Enter</kbd> or right-click finishes, <kbd>Esc</kbd> drops the line, <kbd>Backspace</kbd> takes back a point. Foam, speed, spray and mist are set per waterfall in Properties.
+    <br>Waterfalls made from water over a cliff are curves: a start, middle and end point along the edge with curve handles, and an orange bottom curve you drag to where the water lands (older ones: <span class="ui">Properties &gt; Make it a curve</span>). Taller drops crash harder. A rock or other object placed in a fall sits in the water: it slides over its lower part and foams round its dry top; <span class="ui">Out of the water</span> in its Properties sets how much stays dry.</li>
+  <li><b>Fire</b> and <b>Fire builder</b>: paint where it burns, from embers to an inferno or a burnt-out ruin, with smoke, sparks and flickering light. Drag where it burns; each stroke is one fire. <kbd>[</kbd> and <kbd>]</kbd> change the width; pick the look for new fires in Tool options. The Paint tool has a <span class="ui">Paint fire...</span> shortcut to it. For a fire along a line, draw the line with the Pen and pick Fire.</li>
+  <li><b>Rain</b>: falling rain, wet ground and puddles. The window shows each preset as a picture; set heaviness, puddles, wind, gusts and lightning, choose the whole map or only where you paint it, and which scenes it rains in. With rain on the map already it changes that layer, or adds another (a storm in one scene only). Lightning flashes in the editor only; exports stay still. Everything else is in Properties.</li>
+  <li><b>Scatter brush</b>: paint props from a brush, a set of assets with size, turn and mirror ranges, spacing, a gap between items and clumping. Drag to paint (one stroke is one undo step); <kbd>Shift</kbd>+drag removes the brush's props under the circle. Select some props on the map and click <span class="ui">New from selection</span> for a brush of your own; <span class="ui">+ Asset</span> adds the asset picked in the strip. Brushes are kept for every map. Built in: Rubble, Grass tufts, Reeds (bank), Lily pads, Leaves. Claude can also fill an area with a brush or dress the edge of a pond, road or cave rim.</li>
+  <li><b>Fog</b>: fog, smoke, magic mist and poison gas. Drop emitters like lights (reach and falloff), roll it in from a map edge, raise it off water, seep it from cave walls or paint where it starts. It flows with the wind, wraps round buildings and standing stones, pools in hollows and spills out of open doors. Select the Fog group to change its flow, heaviness, look and blend.</li>
+  <li><b>Tree Composer</b>: make your own trees, bushes, stumps and fallen logs. Pick a shape and leaves, move the sliders, set a glow if you like, and Save: the tree goes into <span class="path">My Trees</span> and shows up in the asset strip, with its own 3D shape for shadows.</li>
+  <li><b>Ocean &amp; coast</b>: a sea, its beach and its seabed along one side of the map in one go, with waves that catch the sun.</li>
+  <li><b>Rocks &amp; outcrops</b>: outcrops, pits, ridges and boulder fields made as ordinary cliff shapes you can edit afterwards.</li>
+  <li><b>Wall and path builder</b>: make your own wall and path styles from pieces.</li>
+  <li><b>Generate VTT walls from void</b>: walls for a cave drawn with a void layer.</li>
+  <li>Waterfall, Fire, Rain, Fog, Scatter brush, Tree Composer, Ocean &amp; coast, Rocks &amp; outcrops and Generate VTT walls are built-in plugins, updated on their own. <span class="ui">File &gt; Modules</span> turns them off and on at any time, no restart needed. Off only hides the tool: your maps still show their waterfalls, fires and rain.</li>
+</ul>
+</main>
+<script src="assets/shots.js"></script>
+<script src="assets/search.js"></script>
+<script src="assets/docs.js"></script>
+</body>
+</html>

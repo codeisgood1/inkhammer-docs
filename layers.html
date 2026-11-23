@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Layers | Ink Hammer guide</title>
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<main class="doc">
+<div class="crumb">Using Ink Hammer</div>
+<h1>Layers</h1>
+<p class="lede">Everything on a map sits on a layer. The order of the layers is the order things are drawn, and it also decides what each lamp lights.</p>
+
+<div class="side-by-side">
+  <div>
+    <h2>The Layers panel</h2>
+    <ul>
+      <li>The top of the list is drawn last, over everything else.</li>
+      <li>Drag a layer up or down to reorder it. Drag objects between layers too.</li>
+      <li>The eye hides a layer, the lock stops it being changed. The number after a name is how many things it holds.</li>
+      <li>Double-click a name to rename it. Right-click for copy, duplicate, move into a group, select everything on it, and new layers of each kind.</li>
+      <li>Click the arrow on a layer to list what is on it; click a row to pick that one thing.</li>
+      <li>The buttons along the bottom add a layer, a group, and the special kinds below.</li>
+      <li>New objects and prefabs go on the layer you have picked. Pick a group and they go on its top object layer; pick a ground, water or mist layer and they go on the nearest object layer above it. A locked or hidden layer takes nothing (the status bar says why).</li>
+    </ul>
+    <h3>Dragging rows</h3>
+    <ul>
+      <li>While you drag, a blue line shows where the row will land, indented to the level it lands on. A blue box means it goes inside that group (or layer).</li>
+      <li>The top half of a row drops above it, the bottom half below. Passing over a group does not drop into it: rest on the middle of its row for a moment and the blue box appears.</li>
+      <li>Rest on a closed group (or a layer's list of objects) for about a second and a half and it opens, so you can drop the row in among what it holds.</li>
+      <li>Just under an open group's title is its first row. Below the last row of an open group, move the pointer left to drop at the group's own level instead.</li>
+      <li>Groups stay open or closed as they were after a drop.</li>
+    </ul>
+    <h3>Working with several at once</h3>
+    <ul>
+      <li><span class="ui">Ctrl+click</span> adds a layer or object to the pick, or takes it out. <span class="ui">Shift+click</span> picks every row between the last click and this one. <span class="ui">Ctrl+A</span> picks every layer in the list, <span class="ui">Esc</span> lets go.</li>
+      <li>Drag any picked row and they all move together, in the same order. Drop on the middle of a group to put them inside it.</li>
+      <li>The eye, the lock, Copy, Duplicate, Delete and the moves all work on every picked layer.</li>
+      <li>Keys while the panel is in use: <span class="ui">Alt+Up / Alt+Down</span> move, <span class="ui">Alt+Right</span> into the group above, <span class="ui">Alt+Left</span> out of its group, <span class="ui">Ctrl+G</span> group the picked layers, <span class="ui">Ctrl+Shift+G</span> ungroup, <span class="ui">Ctrl+D</span> duplicate, <span class="ui">Ctrl+C / Ctrl+V</span> copy and paste, <span class="ui">F2</span> rename, <span class="ui">Delete</span> delete.</li>
+      <li>Right-click picked objects on the map, then <span class="ui">Move to layer &gt; New layer...</span> to give them a layer of their own.</li>
+    </ul>
+  </div>
+  <figure><img class="zoom" src="img/layers-panel.jpg" alt="The Layers panel"></figure>
+</div>
+
+<h2>Kinds of layer</h2>
+<table>
+  <tr><th>Kind</th><th>What it is for</th></tr>
+  <tr><td>Layer</td><td>Objects: furniture, props, trees, decals, walls, lights and labels.</td></tr>
+  <tr><td>Group</td><td>A folder of layers (the new map's Objects group holds Props and Furniture). Hide, lock or fade the whole group at once.</td></tr>
+  <tr><td>Ground</td><td>One painted texture (grass, dirt, flagstones). Stack several and paint where each shows.</td></tr>
+  <tr><td>Water</td><td>Painted water with depth, flow around rocks, foam and ripples.</td></tr>
+  <tr><td>Roof</td><td>Painted roof cover that keeps the sun and rain off, even while hidden. (For drawn roofs with slopes, use the Roofs tool.)</td></tr>
+  <tr><td>Void</td><td>The darkness around a cave. What it covers fades into nothing, and the open area is cave floor: no sun, lamps still work.</td></tr>
+  <tr><td>Rain</td><td>Falling rain, wet ground and puddles over everything below it. It covers the whole map until you paint it: pick the layer, use the Paint tool (B), <span class="ui">Clear all</span>, then paint where it rains (right-drag dries an area). It stays off water (drops make rings there), fire and waterfalls, runs down cliff faces, and wets roofs that show without puddles on them. Rooms of buildings and hidden roofs stay dry.</td></tr>
+  <tr><td>Mist / cloud</td><td>Drifting clouds that fill a painted shape. At the top it rolls over the scene; at the bottom it is a cloud sea under the map.</td></tr>
+</table>
+
+<h2 id="order">Order matters</h2>
+<p>Layers draw from the bottom of the list up. Three things follow from that:</p>
+<ul>
+  <li><b>What covers what.</b> Canopy over Walls hides the wall tops under the trees.</li>
+  <li><b>What a lamp lights.</b> A lamp lights its own layer and every layer under it, never the layers above it. Details in <a href="lighting.html#layer-order">Light and layer order</a>.</li>
+  <li><b>Where mist and rain sit.</b> Mist at the top of the list drifts over everything; low in the list it shows only where the ground is cleared.</li>
+</ul>
+
+<h2>Opacity and blend modes</h2>
+<p>Each layer and each object has an opacity and a blend mode (Multiply, Screen, Overlay and nine more) in Properties. A half-transparent group fades as one picture, so the things inside it do not show through each other.</p>
+<p>Ground layers take a blend mode too, on the layer itself or from a group around it. Blended ground mixes with what is under it and is not lit again, like blended objects: Multiply reads right at night, Screen and Add stay bright in the dark.</p>
+<p>Mist and fog take blend modes too: Screen for a glowing haze, Add for magic light, Multiply with a dark or coloured fog for smoke or poison gas (white fog on Multiply or Overlay barely shows). For fog, set the blend on the Fog group, not on the Fog emitters layer: that layer only holds the markers, and its Properties has <span class="ui">Go to the fog</span>.</p>
+
+<h2 id="masks">Layer masks</h2>
+<p>A mask hides part of an object layer or a group without deleting anything, like a layer mask in Photoshop: half a statue buried in sand, a prop tucked under a cave wall, a rug cut off at a doorway, trees fading out at the map edge. White on the mask shows, black hides, grey is see-through.</p>
+<h3>Adding a mask</h3>
+<ul>
+  <li>Pick the layer or group and click <b>Mask</b> at the bottom of the Layers panel (next to New group). The mask starts showing everything and the Paint tool opens on it.</li>
+  <li>Or right-click the layer &gt; <span class="ui">Add mask</span>, or <span class="ui">Properties &gt; Mask &gt; Add mask</span>. There you can also start with everything hidden.</li>
+  <li>Masks go on object layers and groups. Ground, water and void layers are already painted, so to mask them, put them in a group and mask the group.</li>
+</ul>
+<h3>Masking single objects or a few together</h3>
+<ul>
+  <li>Right-click an object, a wall piece or a building &gt; <span class="ui">Add mask to this object</span> (or select it and click <b>Mask</b>). It moves onto its own masked layer just above its old one, with the same settings and a linked mask that follows it. The mask starts as a copy of the old layer's mask, so nothing changes until you paint. Good for blending one wall into the wall behind it.</li>
+  <li>Several selected: <span class="ui">Add mask to these</span> gives them one shared mask. <span class="ui">Group into a layer</span> puts them on one new layer without a mask; then click <b>Mask</b> (with nothing selected on the map) to mask the whole group.</li>
+  <li>The moved pieces draw over the rest of their old layer.</li>
+</ul>
+<h3>The thumbnails</h3>
+<p>A masked layer shows two thumbnails on its row with a chain between them, as in Photoshop:</p>
+<ul>
+  <li><b>Layer thumbnail</b>: click it to work on the layer's objects (move, place, select).</li>
+  <li><b>Chain</b>: gold means Linked. Click it to link or unlink.</li>
+  <li><b>Mask thumbnail</b>: a small black and white picture of the mask. Click it to paint the mask. A gold frame shows which one you are working on.</li>
+  <li><kbd>Alt</kbd>+click the mask thumbnail to see the mask in black and white over the map. <kbd>Shift</kbd>+click turns the mask off and on (an off mask shows a red cross).</li>
+  <li>Drag the mask thumbnail onto another layer or group to move the mask there. Hold <kbd>Ctrl</kbd> as you drop to copy it instead.</li>
+</ul>
+<h3>Painting the mask</h3>
+<ul>
+  <li>While you paint a mask, the map shows red wherever the mask hides, so you can see exactly what is cut.</li>
+  <li>Left-drag shows, right-drag hides. Soft brushes give soft edges; a hard brush gives a clean cut.</li>
+  <li>The Paint panel adds <b>Show all</b>, <b>Hide all</b>, <b>Invert</b>, <b>Black and white</b> (or back to the red overlay) and <b>Back to the layer</b>.</li>
+</ul>
+<h3>How masks behave</h3>
+<ul>
+  <li><b>Linked</b> (on by default): move, turn or scale everything on the layer together and the mask goes with it. Moving only some things leaves the mask where it is. On a group, select the group to move all of it with its mask. Unlink to move things under a mask that stays put.</li>
+  <li>Masks stack: a mask on a group and masks on layers inside it all apply.</li>
+  <li>Hidden parts cast no sun shadow, block no lamp light (props, walls and buildings) and make no shore in water, so a half-buried rock casts half a shadow and a buried stretch of wall lets lamp light through.</li>
+  <li>Masks work on layers with a blend mode (Multiply, Screen and the rest) too.</li>
+  <li>Invert, copy, paste and delete are on the layer's right-click menu. With the mask thumbnail picked (gold frame), <kbd>Delete</kbd>, the bin button or dragging the thumbnail onto the bin deletes only the mask, never the layer.</li>
+  <li>Two things a mask does not change: a water layer cut by a group mask has no foam along the cut (erase the water itself where a shore should show), and the VTT export writes the full line of a masked wall.</li>
+</ul>
+
+<h2>Per-layer switches</h2>
+<p>Pick a layer and Properties shows its switches:</p>
+<ul>
+  <li><span class="ui">Lit by the sun</span> and <span class="ui">Casts sun shadows</span>. Layers named Paths, Floor, Decals, Rug, Water, Ground or Light start with Casts sun shadows off (the box says so): what is on them lies flat. Tick it to make them cast. An object there with a Height or Lift is still shaded at that height.</li>
+  <li><span class="ui">Affects water</span>: off for trees over a stream, so their trunks make no ripples. A single object can differ from its layer: pick it, then set <span class="ui">Affects water</span> under Sun in Properties (Same as layer, Yes or No). It only shows when the map has water.</li>
+  <li><span class="ui">Sailing</span>: for a ship at sea. Pick the ship (a building or a picture) and tick <span class="ui">Under way</span> in Properties. The water draws a bow wave, a foam line along the hull, a V of waves behind it and churned water astern, and the hull stops getting a beach round it. Drag the blue arrow to turn its heading; V lines sets how far the white lines of the V run before they fade; Speed 0 leaves it at anchor with just the foam line. Leave sea behind the stern for the wake to show.</li>
+  <li><span class="ui">Roof (keeps the rain off)</span>.</li>
+  <li>Ground layers stacked above objects (a layer of sand drifted over a dock, stairs or a wall) take the light of what they lie on: a wall top is bright, stair steps keep their shading, the sand sits in the shadows the ground is in. Next to building floors they skip the floor's contact shade so its edge does not show. <span class="ui">Contact shade from things under it</span> brings that shade back; <span class="ui">Flat light (ignore what is under it)</span> drops all shading from what is under the layer (it then also skips the shadows the ground around it is in, so a patch can look brighter than its surroundings). To hide an object's shape under sand cleanly, mask the object instead.</li>
+  <li>A building hides what is drawn under it on its own layer from the sun, lamps and contact shade, like things on lower layers (a tower over a cliff casts no shadows of the cliff's plants onto its floor).</li>
+  <li><span class="ui">Shown in</span> (maps with more than one scene): tick the scenes a layer shows in. Rain and fog usually belong to one scene, such as a storm at night, while the ground shows in all of them. New rain and mist layers start in the scene you are in; a new scene made as a copy keeps the layers of the scene it was copied from. Deleting a scene deletes the layers that were only in it (Ctrl+Z brings them back).</li>
+</ul>
+</main>
+<script src="assets/shots.js"></script>
+<script src="assets/search.js"></script>
+<script src="assets/docs.js"></script>
+</body>
+</html>

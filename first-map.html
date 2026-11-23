@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your first map | Ink Hammer guide</title>
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<main class="doc">
+<div class="crumb">Start</div>
+<h1>Your first map</h1>
+<p class="lede">A roadside tavern, from a blank map to files you can play on. Tick each step off as you go; this page remembers where you got to.</p>
+
+<div class="progress"><span></span></div>
+<ol class="steps" data-save="first-map">
+
+<li>
+  <h3>Make the map</h3>
+  <p>On the start screen click <span class="ui">New map...</span> (or <span class="ui">File &gt; New map</span>, <kbd>Ctrl</kbd>+<kbd>N</kbd>). Name it, pick <span class="ui">Medium 30x20</span> and click <span class="ui">Create map</span>.</p>
+  <p>A new map comes with a stack of empty layers ready to use: Floor, Paths, Floor Decals, Objects, Walls, Canopy and Above Walls.</p>
+</li>
+
+<li>
+  <h3>Paint the ground</h3>
+  <p>Pick the <span class="ui">Paint</span> tool (<kbd>B</kbd>) and click <span class="ui">+ New ground layer</span>. Choose a grass texture for it, then drag over the map to paint.</p>
+  <ul>
+    <li>Left-drag shows the texture, right-drag hides it. <kbd>[</kbd> and <kbd>]</kbd> change the brush size.</li>
+    <li>Add a second ground layer (dirt or cobbles) for a road and the yard. Each ground layer holds one texture, so you can repaint one without touching the other.</li>
+  </ul>
+  <figure class="shot"><img src="img/tool-paint.jpg" alt="Painting ground"></figure>
+</li>
+
+<li>
+  <h3>Build the tavern</h3>
+  <p>Pick <span class="ui">Build</span> (<kbd>U</kbd>) and drag a rectangle for the main hall. Walls, floor and ink lines appear on their own.</p>
+  <ul>
+    <li>Drag another rectangle touching the first to add a kitchen; the shared wall becomes a thin inner wall.</li>
+    <li>Draw a rectangle inside a room to split it into two.</li>
+    <li>Use the doors mode in the bar over the map, pick a door, and click a wall. It cuts its own opening.</li>
+  </ul>
+  <figure class="shot"><img src="img/tool-structure.jpg" alt="The Build tool"></figure>
+</li>
+
+<li>
+  <h3>Furnish it</h3>
+  <p>In the Assets panel at the bottom, type <code>table</code> in <span class="ui">Search assets</span>. Click a table, then click inside the hall. Hold <kbd>Shift</kbd> to place several.</p>
+  <ul>
+    <li><kbd>R</kbd> turns the selection 15 degrees, <kbd>F</kbd> mirrors it, <kbd>Ctrl</kbd>+drag drags out a copy.</li>
+    <li>Furniture goes on the Furniture layer and small things on Props, so you can hide or lock them separately.</li>
+  </ul>
+</li>
+
+<li>
+  <h3>Add a roof</h3>
+  <p>Select the building and click <span class="ui">Add a roof</span> in Properties, or use the <span class="ui">Roofs</span> tool to drag one out. Shape it in <span class="ui">Edit lines</span>: drag the ridge, make an end a gable with a right-click.</p>
+  <p>For play you usually want to see inside: click the eye on the <span class="ui">Roofs</span> layer to hide it. A hidden roof still keeps the sun out, so the inside stays shaded.</p>
+  <figure class="shot"><img src="img/tool-roof.jpg" alt="The Roofs tool"></figure>
+</li>
+
+<li>
+  <h3>Light it</h3>
+  <p>Pick <span class="ui">Lights</span> (<kbd>L</kbd>). Click <span class="ui">Dusk</span> under Scene darkness, then click <span class="ui">Fireplace</span> or <span class="ui">Candle</span> under New light and click the map where it goes.</p>
+  <div class="callout"><b>Lamps follow the layer order</b><p>A lamp lights its own layer and everything below it. New lamps go on a Lights layer at the top, so they light everything. Drag that layer under the roofs if the lamps should not light the roof tops. See <a href="lighting.html#layer-order">Light and layer order</a>.</p></div>
+  <figure class="shot"><img src="img/tool-light.jpg" alt="The Lights tool"></figure>
+</li>
+
+<li>
+  <h3>Label it (optional)</h3>
+  <p>Pick <span class="ui">Labels</span> (<kbd>N</kbd>), click the map and type. Pull an arrow out of the box and point it at the trapdoor. Labels can go into your exports or stay in the editor only.</p>
+</li>
+
+<li>
+  <h3>Save and export</h3>
+  <p>Save with <kbd>Ctrl</kbd>+<kbd>S</kbd>. Then <span class="ui">File &gt; Export</span> (<kbd>Ctrl</kbd>+<kbd>E</kbd>), keep the ticked outputs and click <span class="ui">Export</span>. You get a gridless and a gridded picture, a Roll20 picture and a Universal VTT file with the walls, doors and lights.</p>
+  <p>Details in <a href="export.html">Exporting for play</a>.</p>
+</li>
+
+</ol>
+
+<div class="callout tip"><b>Let Claude draft it</b><p>With the Claude connection on, you can ask Claude for "a two-room roadside tavern at dusk with a stable", watch it build the map live, then refine it by hand. See <a href="claude.html">Connect Claude</a>.</p></div>
+</main>
+<script src="assets/shots.js"></script>
+<script src="assets/search.js"></script>
+<script src="assets/docs.js"></script>
+</body>
+</html>

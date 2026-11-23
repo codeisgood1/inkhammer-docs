@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install and first launch | Ink Hammer guide</title>
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<main class="doc">
+<div class="crumb">Start</div>
+<h1>Install and first launch</h1>
+<p class="lede">Ink Hammer runs from its own folder. There is no installer: unzip it and start it.</p>
+<div class="callout warn"><b>Windows will warn you the first time. This is expected.</b>
+<p>Ink Hammer has no installer and changes nothing on your system: you unzip the folder and run <span class="path">Ink Hammer.exe</span>. Because this beta is not code-signed yet, Windows SmartScreen shows a blue box saying <span class="ui">Windows protected your PC</span> and "unknown publisher". Click <span class="ui">More info</span>, then <span class="ui">Run anyway</span>. You only need to do this once. Some antivirus programs may also ask about it; allow <span class="path">Ink Hammer.exe</span> from the folder you unzipped. Only run a copy you downloaded from the official store page (itch.io, Payhip or Steam).</p></div>
+<div class="callout"><b>Beta software</b>
+<p>Ink Hammer is in development. Expect bugs and things that don't work yet. Updates, including 1.0, may change or break maps you make now: keep backups (each save also keeps a <span class="path">.bak</span> of the previous one). The first time you start it you are asked to read and accept the license agreement (also in <span class="path">EULA.txt</span> and <span class="ui">Help &gt; License agreement</span>).</p></div>
+
+<h2>Install</h2>
+<ol>
+  <li>Download three files from the store page: the <span class="ui">Ink Hammer app</span>, <span class="ui">Anvil Pack Core</span> (textures, walls, paths, doors) and <span class="ui">Anvil Pack Items</span> (props and furniture).</li>
+  <li>Unzip all three to the same place you keep, for example <span class="path">Documents</span>. Each zip has an <span class="path">Ink Hammer</span> folder inside, so they end up in one <span class="path">Ink Hammer</span> folder (the packs go into <span class="path">Ink Hammer\Modules</span>). Choose Replace if Windows asks.</li>
+  <li>Open the folder and double-click <span class="path">Ink Hammer.exe</span>.</li>
+  <li>If Windows shows <span class="ui">Windows protected your PC</span>, click <span class="ui">More info</span>, then <span class="ui">Run anyway</span>. This appears because the beta is not code-signed yet.</li>
+</ol>
+<p>If a pack is missing, Ink Hammer says so when it starts, and maps show pink squares where that art goes. Another way to add a pack (or any module you buy): drop its <span class="path">.zip</span> into <span class="path">Documents\Ink Hammer\Modules</span> and restart. It installs once and the zip moves to <span class="path">_installed</span>.</p>
+
+<h3>Updating</h3>
+<p>Unzip the new app zip over your <span class="path">Ink Hammer</span> folder and choose Replace. The art packs and your own imports stay as they are. Download a pack again only when the release notes say it changed.</p>
+
+<h3>What is in the folder</h3>
+<table>
+  <tr><th>Folder or file</th><th>What it holds</th></tr>
+  <tr><td><span class="path">Ink Hammer.exe</span></td><td>The program.</td></tr>
+  <tr><td><span class="path">Modules</span></td><td>The art packs (<span class="path">anvilnink.pack-core</span>, <span class="path">anvilnink.pack-items</span>) and the built-in tool plugins. Turn any of them off in <span class="ui">File &gt; Modules...</span></td></tr>
+  <tr><td><span class="path">Anvil Pack</span></td><td>Your own imports, saved prefabs and wall or path sets. Images you copy in here show up the next time you start Ink Hammer (or after <span class="ui">Rescan</span>).</td></tr>
+  <tr><td><span class="path">maps</span></td><td>Where new maps are saved unless you pick another folder.</td></tr>
+  <tr><td><span class="path">exports</span></td><td>Where exports go unless you pick another folder.</td></tr>
+  <tr><td><span class="path">mcp</span></td><td>The connector that lets Claude work in Ink Hammer (see <a href="claude.html">Connect Claude</a>).</td></tr>
+  <tr><td><span class="path">docs</span></td><td>This guide. Open <span class="path">docs\index.html</span> any time, or use <span class="ui">Help &gt; User guide</span> in the app.</td></tr>
+</table>
+
+<h3>What you need</h3>
+<ul>
+  <li>Windows 10 or 11 (64-bit).</li>
+  <li>A graphics card that runs DirectX 12 (most cards from the last ten years). Water and lighting are drawn on the graphics card, so a dedicated card is smoothest. On a laptop with built-in graphics, see <a href="troubleshooting.html#the-editor-feels-slow">The editor feels slow</a>.</li>
+</ul>
+
+<h2>The start screen</h2>
+<p>Ink Hammer opens on the start screen. Click the numbers to see what each part does.</p>
+<div class="tour" data-shot="start" data-img="img/start.jpg" data-alt="The start screen">
+  <ol class="tour-list">
+    <li data-spot="new"><b>New map</b>Opens the new map form: name, folder, size in squares and grid look.</li>
+    <li data-spot="open"><b>Open map</b>Opens any <code>.anvilmap</code> file on your computer.</li>
+    <li data-spot="assets"><b>Asset Manager</b>Browse, tag and import art before you start a map.</li>
+    <li data-spot="guide"><b>User guide</b>Opens this guide in your browser. It is also in <span class="ui">Help &gt; User guide</span>.</li>
+    <li data-spot="continue"><b>Continue to the editor</b>Goes to the editor with an empty map, or the map you had open.</li>
+    <li data-spot="recent" data-pin="center"><b>Recent maps</b>Your last maps with a small picture and their size. Double-click one to open it. Maps joined as floors or side maps show as one card (the main map, with how many maps and scenes it holds); open it to pick any floor, side map or scene.</li>
+  </ol>
+</div>
+
+<h2>Make a new map</h2>
+<figure class="shot"><img src="img/start-new.jpg" alt="The new map form"><figcaption>The new map form on the start screen.</figcaption></figure>
+<ul>
+  <li><b>Name</b> and <b>Save in</b>: the map is saved straight away, so it has a file from the start.</li>
+  <li><b>Presets</b> set common sizes. One square is 256 pixels in the map, the same scale Dungeondraft uses.</li>
+  <li><b>Feet per square</b> is usually 5. It sets how long shadows are and how heights read.</li>
+  <li><b>Grid lines</b> sets whether the grid shows, how strong it is and its colour. You can change all of it later in <span class="ui">File &gt; Settings</span>.</li>
+</ul>
+<p>Click <span class="ui">Create map</span> and the editor opens. Next: <a href="first-map.html">Your first map</a>.</p>
+
+<h2>Saving and lost work</h2>
+<ul>
+  <li><kbd>Ctrl</kbd>+<kbd>S</kbd> saves. The previous version is kept next to it as a <code>.bak</code> file.</li>
+  <li>Ink Hammer also autosaves a separate copy every 2 minutes. It never overwrites your map file.</li>
+  <li>If Ink Hammer closes without saving (a crash or a power cut), the next start shows <span class="ui">Recover unsaved work</span>. <span class="ui">Recover</span> opens the autosaved copy; save it to keep it. <span class="ui">Discard</span> throws the copy away.</li>
+</ul>
+<div class="callout"><b>Moving a map to another computer</b><p>Use <span class="ui">File &gt; Package map with its assets</span>. It writes one folder with the map and every piece of art it uses, so it opens complete anywhere.</p></div>
+</main>
+<script src="assets/shots.js"></script>
+<script src="assets/search.js"></script>
+<script src="assets/docs.js"></script>
+</body>
+</html>

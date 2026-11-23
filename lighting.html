@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Light and shadow | Ink Hammer guide</title>
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<main class="doc">
+<div class="crumb">Using Ink Hammer</div>
+<h1>Light and shadow</h1>
+<p class="lede">Daylight sets how bright the shadows are, the sun or moon throws shadows from everything with a height, and lamps light what is under them in the layer stack.</p>
+
+<div class="side-by-side">
+  <div>
+    <h2>Scene darkness</h2>
+    <p>In the Lights tool (<kbd>L</kbd>), <span class="ui">Day</span>, <span class="ui">Dusk</span>, <span class="ui">Night</span> and <span class="ui">Cave</span> set the whole scene at once.</p>
+    <ul>
+      <li><span class="ui">Daylight</span> is the light that reaches everywhere, shadows included. 100% means shadows are only as dark as the sun's extra light makes them.</li>
+      <li><span class="ui">Ambient tint</span> colours that light: blue for night, warm for a sunset.</li>
+      <li>Daylight can go down to 0%: everything outside your lamps is black and the lamps keep their full colour (3D lighting).</li>
+    </ul>
+
+    <h2>The sun or moon</h2>
+    <ul>
+      <li><span class="ui">From</span> is the direction it shines from, <span class="ui">Elevation</span> how high it is. A low sun throws long shadows: at 14 degrees a shadow is about four times as long as the thing is tall.</li>
+      <li><span class="ui">Intensity</span> and <span class="ui">Color</span> set its strength and colour.</li>
+      <li><span class="ui">Shadow colour</span> and <span class="ui">Shadow depth</span> set how dark and what colour every shadow is.</li>
+      <li><span class="ui">Cast shadows</span> turns sun shadows on for this map.</li>
+      <li><span class="ui">Shadow fade</span> and <span class="ui">Fade over</span>: long shadows are darkest at the foot of what casts them and lighten toward the tip, as in life. 0 gives even shadows.</li>
+      <li><span class="ui">Soft edges</span>: shadow edges blur the further they reach from the caster. 0 keeps them crisp.</li>
+      <li><span class="ui">Lamp shadow fade</span> and <span class="ui">Lamp fade over</span>: the same fade for lamp shadows (of things shorter than the lamp). It works with the sun off.</li>
+    </ul>
+    <p>Heights come from the things themselves: walls use their height, props their <span class="ui">Height (ft)</span> (how tall they are) and <span class="ui">Lift (ft)</span> (how high they hang: a sail on its yard, a chandelier; the shadow then lands apart from it and lamps shine under it), roofs their eave and ridge, terrain its painted height.</p>
+  </div>
+  <figure><img class="zoom" src="img/panel-light.jpg" alt="The Lights panel"></figure>
+</div>
+
+<h2>Lamps</h2>
+<ul>
+  <li>Pick a preset under <span class="ui">New light</span> (torch, candle, campfire, brazier, magic, spotlight, floodlight, window, fireplace, moonlight) and click the map. Each preset has a sensible height: a candle 3 ft, a torch 7 ft.</li>
+  <li>Drag a lamp to move it; drag its handles for reach, falloff, aim and width.</li>
+  <li>Lamps cast shadows from walls and from every prop's outline. A lamp above a crate is not blocked by it.</li>
+  <li>A lamp with <span class="ui">Shadows</span> off is a clean area light: only walls and buildings stop it. Tick <span class="ui">Through walls</span> as well and nothing stops it, for an overall fill light.</li>
+  <li><span class="ui">Stays on its level</span>: the light reaches only the ground it stands on and anything higher, so a cliff fully blocks it from everything below (3D lighting).</li>
+  <li>Object lamps (a lantern, a brazier): untick <span class="ui">Light this object</span> so a sconce lights the room without glaring on itself.</li>
+  <li>One building floor can take about 14 lamps. Past that, some lamps stop lighting that floor (their walls still light). Spread the lamps out or split a big hall into more than one building.</li>
+  <li>Trees cast their crown's shadow plus a thin trunk shadow joining it to the tree.</li>
+  <li>Hide a layer to switch its lamps off.</li>
+  <li>Glowing art (lanterns, crystals, runes) can glow and cast real light of its own colour; see the object's Properties.</li>
+</ul>
+
+<h2 id="light-3d">3D lighting</h2>
+<p>Lamps and the sun are lit and shadowed by a hidden 3D copy of the map: walls are solid with real door and window holes, props stand at their real height and lift, cliffs and terrain have their real slopes. Shadows soften as they widen, buildings with roofs only let the sun in through their doors and windows, and exports carry the same look.</p>
+<ul>
+  <li><span class="ui">Render quality</span> (top bar, and <span class="ui">Settings &gt; Speed</span>), 10% to 100%: low settings give chunkier, softer shadows and much faster lighting while you work. Exports always render at full quality.</li>
+  <li><span class="ui">Settings &gt; Speed &gt; 3D lighting quality</span>: Low for laptops and integrated graphics, Standard, or High.</li>
+  <li><span class="ui">Lighting &gt; Master light &gt; 3D lighting</span> turns it off for the classic 2D lighting. Computers without Vulkan or Direct3D 12 use classic lighting.</li>
+  <li><span class="ui">View &gt; Show shadow shapes (3D)</span> shows each object's 3D shape over the map, and the 3D view panel shows the whole copy. Shape any asset in the Asset Manager with <span class="ui">Design 3D shape</span>.</li>
+  <li>Only things that exist on the map cast: a mast drawn into a ship's deck picture casts nothing. Add an object for it.</li>
+  <li>Layer order does not matter to 3D lighting, only heights do. A prop partly over a step or a low ledge is lit just above the highest ground under it, and props lean only with gentle slopes, so stair edges do not show through them.</li>
+  <li>A rope or beam lying on a dock: give the line a <span class="ui">Lift</span> (and a <span class="ui">Thickness</span> for its own shadow) in <span class="ui">Properties &gt; Sun</span>.</li>
+  <li>The 3D view shows props with a <span class="ui">Design 3D shape</span> in that shape. If a shadow looks wrong there, check the shape's slices reach the top of the picture.</li>
+  <li>Sun <span class="ui">Soft edges</span> can blur a step's light onto a prop sitting partly over it (a lighter patch). Lower it on that map if it shows.</li>
+</ul>
+<h2 id="layer-order">Light and layer order</h2>
+<p>With 3D lighting, height decides what a lamp lights inside a room: a lamp on a table lights the floor, a chandelier lights the table. Layer order still keeps lamps under <b>roofs and high mist</b>: those stay unlit by lamps under them. With classic 2D lighting a lamp lights <b>its own layer and every layer under it</b>, never the layers above it.</p>
+<div class="side-by-side">
+  <div>
+    <p>In this stack the lamps sit under the roofs, so the roof tops stay dark while the floor and furniture are lit. Drag the Lights layer above Roofs and the lamps light the roofs too.</p>
+    <p>Bounce light (light spilling off lit surfaces) follows the top lamp: layers above every lamp get none.</p>
+  </div>
+  <div class="stack" aria-label="Example layer stack">
+    <div class="dark">Mist <em>not lit</em></div>
+    <div class="dark">Roofs <em>not lit</em></div>
+    <div class="lamp">Lights <em>the lamps</em></div>
+    <div class="lit">Furniture <em>lit</em></div>
+    <div class="lit">Walls <em>lit</em></div>
+    <div class="lit">Floor <em>lit</em></div>
+  </div>
+</div>
+
+<h2>Contact shade and bounce light</h2>
+<ul>
+  <li><span class="ui">Ambient occlusion</span> (contact shade) darkens where things meet the ground and in tight corners. <span class="ui">Strength</span> and <span class="ui">Reach</span> in the Lights panel.</li>
+  <li><span class="ui">Bounce light</span> lifts shadows next to a lamp's pool or a sunlit wall and tints them with its colour.</li>
+</ul>
+
+<h2 id="speed-switches">Speed switches</h2>
+<figure><img src="img/speed-switches.jpg" alt="The speed switches" style="max-width:420px"></figure>
+<p>The row of switches at the top right of the window turns heavy effects off while you work: <b>sun shadows</b>, <b>lamp shadows</b>, <b>contact shade</b>, <b>animation</b>, <b>draft detail</b> and the <b>void</b>, then the <b>render scale</b>. A lit switch is on.</p>
+<div class="callout warn"><b>No sun shadows?</b><p>Check the first switch (the sun). When it is off, no sun shadows show in the editor, even with Cast shadows ticked. The Lights panel says so and has a <span class="ui">Show sun shadows</span> button. Exports always have every effect.</p></div>
+<p><span class="ui">View &gt; Fast editing</span> turns all of them off and drops the render scale to 50%. <span class="ui">View &gt; Full quality</span> turns them back on. The switches are saved on your computer, not in the map.</p>
+</main>
+<script src="assets/shots.js"></script>
+<script src="assets/search.js"></script>
+<script src="assets/docs.js"></script>
+</body>
+</html>

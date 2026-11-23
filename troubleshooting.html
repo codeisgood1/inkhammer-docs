@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Troubleshooting | Ink Hammer guide</title>
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<main class="doc">
+<div class="crumb">Help</div>
+<h1>Troubleshooting</h1>
+<p class="lede">The usual problems and their fixes. Click a question to open it.</p>
+
+<h2>Lighting</h2>
+<details><summary>I don't see any sun shadows</summary><div>
+  <ul>
+    <li>The sun switch at the top right (the first of the speed switches) may be off. The Lights panel says so and has a <span class="ui">Show sun shadows</span> button. See <a href="lighting.html#speed-switches">Speed switches</a>.</li>
+    <li>In the Lights tool, check <span class="ui">On</span> and <span class="ui">Cast shadows</span> under Master light.</li>
+    <li>With <span class="ui">Daylight</span> at 100% shadows are faint. Lower it, or raise <span class="ui">Shadow depth</span>.</li>
+    <li>The object needs a height: props use <span class="ui">Height (ft)</span>, and the layer needs <span class="ui">Casts sun shadows</span>.</li>
+  </ul>
+</div></details>
+<details><summary>A lamp does not light something</summary><div>
+  <p>A lamp lights only its own layer and the layers under it. Drag the lamp's layer above the thing it should light, or move the thing to a lower layer. See <a href="lighting.html#layer-order">Light and layer order</a>.</p>
+</div></details>
+<details><summary>Everything is dark inside a building</summary><div>
+  <p>Buildings keep the sun out (as if roofed), so the inside only gets daylight and lamps. Add lamps inside, or select the building and untick <span class="ui">Roofed</span> for an open ruin.</p>
+</div></details>
+
+<h2>Speed</h2>
+<details><summary>The editor feels slow</summary><div>
+  <ul>
+    <li><span class="ui">View &gt; Fast editing</span> turns heavy effects off and draws at 50%. <span class="ui">View &gt; Full quality</span> puts them back.</li>
+    <li>Or turn single speed switches off at the top right: animation and contact shade cost the most on big maps.</li>
+    <li>Lower the render scale (the % box at the top right). The map looks softer; exports are not affected.</li>
+    <li>The status bar shows frames per second and how long the map takes to draw, so you can see what helped.</li>
+  </ul>
+</div></details>
+<details><summary>The map looks soft or blurry</summary><div>
+  <p>The render scale (top right) is below 100%, or Fast editing is on. Set it back to 100% or use <span class="ui">View &gt; Full quality</span>.</p>
+</div></details>
+
+<h2>Files</h2>
+<details><summary>Ink Hammer closed and I lost my work</summary><div>
+  <p>Start Ink Hammer again. If there is an autosaved copy newer than your file, it asks <span class="ui">Recover unsaved work</span>. Click <span class="ui">Recover</span>, then save. Ink Hammer autosaves every 2 minutes.</p>
+  <p>Your last saved version is also kept beside the map as a <code>.bak</code> file.</p>
+</div></details>
+<details><summary>Art is missing when I open a map on another computer</summary><div>
+  <p>Package the map on the first computer with <span class="ui">File &gt; Package map with its assets</span>, then open the packaged copy.</p>
+</div></details>
+<details><summary>Windows won't start Ink Hammer.exe</summary><div>
+  <p>On the <span class="ui">Windows protected your PC</span> screen click <span class="ui">More info</span>, then <span class="ui">Run anyway</span>. The beta is not code-signed yet.</p>
+</div></details>
+
+<h2>Claude</h2>
+<details><summary>Claude can't reach Ink Hammer</summary><div>
+  <p>See <a href="claude.html#if-it-does-not-work">Connect Claude: if it does not work</a>.</p>
+</div></details>
+
+<h2>Reporting a bug</h2>
+<p><span class="ui">Help &gt; Report a bug</span> copies your Ink Hammer version, Windows version and graphics card to the clipboard. Paste them into your report with what you did just before it went wrong, and a screenshot if you can.</p>
+</main>
+<script src="assets/shots.js"></script>
+<script src="assets/search.js"></script>
+<script src="assets/docs.js"></script>
+</body>
+</html>

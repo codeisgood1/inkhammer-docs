@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exporting for play | Ink Hammer guide</title>
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<main class="doc">
+<div class="crumb">Using Ink Hammer</div>
+<h1>Exporting for play</h1>
+<p class="lede"><span class="ui">File &gt; Export</span> (<kbd>Ctrl</kbd>+<kbd>E</kbd>) writes everything a table needs in one run: pictures for print or screen, and a file a virtual tabletop can read with the walls, doors and lights.</p>
+
+<div class="side-by-side">
+  <div>
+    <h2>The outputs</h2>
+    <table>
+      <tr><th>Output</th><th>Use it for</th></tr>
+      <tr><td>Gridless</td><td>Virtual tabletops that draw their own grid.</td></tr>
+      <tr><td>Gridded</td><td>Printing, or tabletops without a grid.</td></tr>
+      <tr><td>Roll20</td><td>A JPG at Roll20's 70 px per square, no grid.</td></tr>
+      <tr><td>Master PNG</td><td>A lossless copy to keep or edit elsewhere.</td></tr>
+      <tr><td>Universal VTT</td><td>A <code>.dd2vtt</code> file: the picture plus walls, doors, windows and lights.</td></tr>
+      <tr><td>Book (grayscale PNG)</td><td>A black and white picture for a printed book, with the look set in Book view (top bar): brightness, contrast and midtones. 74 px per square by default.</td></tr>
+    </table>
+    <p>Each output has its own size in pixels per square. Higher is sharper and bigger on disk.</p>
+  </div>
+  <figure><img class="zoom" src="img/export-window.jpg" alt="The Export window"></figure>
+</div>
+
+<h2 id="check">Before you export: Check map</h2>
+<p><span class="ui">Tools &gt; Check map</span> lists mistakes that are easy to miss: missing art, props off the map edge or hidden under a building's floor, two copies of a prop on top of each other, props drawn far bigger or smaller than usual, glows that blow out to white, lamps right beside a tall prop (they throw a hard wedge of shadow), lamps off the map and empty layers. Click a line to select the thing and go there. It changes nothing; fix what matters and click <span class="ui">Check again</span>.</p>
+
+<h2>Into a virtual tabletop</h2>
+<p>The <code>.dd2vtt</code> file is the Universal VTT format. It loads in:</p>
+<ul>
+  <li><b>Foundry VTT</b> with the Universal Battlemap Importer module.</li>
+  <li><b>Owlbear Rodeo</b>, <b>Arkenforge</b>, <b>Fantasy Grounds</b> and most tools that take Dungeondraft exports.</li>
+</ul>
+<p>Before exporting, turn on <span class="ui">Walls view</span> (top bar) to check what the tabletop will get: walls, doors, windows and openings in colour. The export also writes a short report of problems it found (gaps in walls, doors off a wall).</p>
+<ul>
+  <li><span class="ui">Windows in the VTT file</span>: as closed doors (block sight until opened) or as gaps.</li>
+  <li><span class="ui">Image inside the VTT file</span>: PNG works everywhere; WebP is much smaller if your tabletop takes it.</li>
+  <li>Invisible walls (Walls tool) block sight and movement in the tabletop but never show in the picture. Cave edges: <span class="ui">Tools &gt; Specialized &gt; Generate VTT walls from void</span>.</li>
+</ul>
+
+<h2>Other settings</h2>
+<ul>
+  <li><span class="ui">Maps to export</span>: only this map, or this map with its levels above and below and the maps beside it. <span class="ui">Overview of how they join</span> adds one picture of them all laid out together.</li>
+  <li><span class="ui">Scenes</span>: every scene (one set each) or only the current one.</li>
+  <li><span class="ui">Shadow and water detail</span>: High and Max render sharper shadows and water for the export.</li>
+  <li><span class="ui">Labels</span>: a DM copy with labels, a clean player copy, or both in their own folders.</li>
+  <li><span class="ui">Grid</span>: line colour, opacity and width for the gridded copy.</li>
+  <li><span class="ui">Watermarked copy</span>: a smaller copy with your logo or text for posting online.</li>
+</ul>
+
+<div class="callout"><b>Exports always render everything</b><p>The speed switches only change the editor. Sun shadows, lamp shadows and animation all go into the export, at the detail you pick.</p></div>
+
+<h2>Package a map</h2>
+<p><span class="ui">File &gt; Package map with its assets</span> writes a folder with the map and every piece of art it uses. Open the <code>.anvilmap</code> inside it on any computer and its art joins the library on its own.</p>
+</main>
+<script src="assets/shots.js"></script>
+<script src="assets/search.js"></script>
+<script src="assets/docs.js"></script>
+</body>
+</html>
