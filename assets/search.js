@@ -118,7 +118,7 @@ window.INK_SEARCH = [
 "p": "Exporting for play",
 "h": "Before you export: Check map",
 "u": "export.html#check",
-"t": "Tools > Check map lists mistakes that are easy to miss: missing art, props off the map edge or hidden under a building's floor, two copies of a prop on top of each other, props drawn far bigger or smaller than usual, glows that blow out to white, lamps right beside a tall prop (they throw a hard wedge of shadow), lamps off the map and empty layers. Click a line to select the thing and go there. It changes nothing; fix what matters and click Check again."
+"t": "Tools > Check map lists mistakes that are easy to miss: missing art, props off the map edge or hidden under a building's floor, two copies of a prop on top of each other, props drawn far bigger or smaller than usual, glows that blow out to white, lamps right beside a tall prop (they throw a hard wedge of shadow), lamps off the map and empty layers. Its lighting pass flags lamps with shadows off, lamps above a roof or inside a prop, and furniture that casts no shadow; it also lists art with no size in its pack. Click a line to select the thing and go there. It changes nothing; fix what matters "
 },
 {
 "p": "Exporting for play",
@@ -154,7 +154,7 @@ window.INK_SEARCH = [
 "p": "Your first map",
 "h": "Paint the ground",
 "u": "first-map.html#paint-the-ground",
-"t": "Pick the Paint tool (B) and click + New ground layer. Choose a grass texture for it, then drag over the map to paint. Left-drag shows the texture, right-drag hides it. [ and ] change the brush size. Add a second ground layer (dirt or cobbles) for a road and the yard. Each ground layer holds one texture, so you can repaint one without touching the other."
+"t": "Pick the Paint tool (B) and click the first button under Add a paint layer (New ground layer). Choose a grass texture for it, then drag over the map to paint. Left-drag shows the texture, right-drag hides it. [ and ] change the brush size. Add a second ground layer (dirt or cobbles) for a road and the yard. Each ground layer holds one texture, so you can repaint one without touching the other."
 },
 {
 "p": "Your first map",
@@ -208,7 +208,7 @@ window.INK_SEARCH = [
 "p": "Install and first launch",
 "h": "Updating",
 "u": "getting-started.html#updating",
-"t": "Unzip the new app zip over your Ink Hammer folder and choose Replace. The art packs and your own imports stay as they are. Download a pack again only when the release notes say it changed."
+"t": "Help > Check for updates... says whether a newer version is out and opens the download page. New in 0.9.24 Unzip the new app zip over your Ink Hammer folder and choose Replace. The art packs and your own imports stay as they are. Download a pack again only when the release notes say it changed."
 },
 {
 "p": "Install and first launch",
@@ -220,7 +220,7 @@ window.INK_SEARCH = [
 "p": "Install and first launch",
 "h": "What you need",
 "u": "getting-started.html#what-you-need",
-"t": "Windows 10 or 11 (64-bit). A graphics card that runs DirectX 12 (most cards from the last ten years). Water and lighting are drawn on the graphics card, so a dedicated card is smoothest. On a laptop with built-in graphics, see The editor feels slow."
+"t": "Windows 10 or 11 (64-bit). A graphics card with Vulkan support (most cards from the last ten years; DirectX 12 is used if Vulkan is missing). Water and lighting are drawn on the graphics card, so a dedicated card is smoothest. On a laptop with built-in graphics, see The editor feels slow."
 },
 {
 "p": "Install and first launch",
@@ -256,7 +256,7 @@ window.INK_SEARCH = [
 "p": "Welcome",
 "h": "Look things up",
 "u": "index.html#look-things-up",
-"t": "The toolsPaint, Pen, Height, Place, Build, Roofs, Lights, Walls, Labels and Grid. LayersLayer kinds, order, and why order decides what a lamp lights. Light and shadowDaylight, the sun, lamps, shadows and the speed switches. Exporting for playGridless, gridded, Roll20 and Universal VTT files. Connect ClaudeLet Claude draft a map for you to refine. TroubleshootingNo shadows, slow redraws, lost work, connection errors."
+"t": "The toolsPaint, Pen, Height, Place, Build, Roofs, Lights, Walls, Labels and Grid. LayersLayer kinds, order, and why order decides what a lamp lights. Cliffs, dunes and hillsEvery cliff look, breakup on the ledges, rolling dunes, sinking props into the ground. Walls and buildingsEvery wall style, walls off the ground, flipping, roof blends. Water and waterfallsEvery water look, rivers that flow, the sea, waterfalls and spills. Light and shadowDaylight, the sun, lamps, shadows and the speed switches. Exporting for playGridless, gridded, Roll20 and Universal VTT files. Connect ClaudeLet Claude dr"
 },
 {
 "p": "Welcome",
@@ -304,7 +304,7 @@ window.INK_SEARCH = [
 "p": "Layers",
 "h": "The Layers panel",
 "u": "layers.html#the-layers-panel",
-"t": "The top of the list is drawn last, over everything else. Drag a layer up or down to reorder it. Drag objects between layers too. The eye hides a layer, the lock stops it being changed. The number after a name is how many things it holds. Double-click a name to rename it. Right-click for copy, duplicate, move into a group, select everything on it, and new layers of each kind. Click the arrow on a layer to list what is on it; click a row to pick that one thing. The buttons along the bottom add a layer, a group, and the special kinds below. New objects and prefabs go on the layer you have picked."
+"t": "The top of the list is drawn last, over everything else. Drag a layer up or down to reorder it. Drag objects between layers too. The eye hides a layer, the lock stops it being changed. The number after a name is how many things it holds. Double-click a name to rename it. Right-click for copy, duplicate, move into a group, select everything on it, and new layers of each kind. Click the arrow on a layer to list what is on it; click a row to pick that one thing. The buttons along the bottom add a layer, a mask, and ground, water, void and mist layers. Roof and rain layers come from the row of but"
 },
 {
 "p": "Layers",
@@ -334,7 +334,7 @@ window.INK_SEARCH = [
 "p": "Layers",
 "h": "Opacity and blend modes",
 "u": "layers.html#opacity-and-blend-modes",
-"t": "Each layer and each object has an opacity and a blend mode (Multiply, Screen, Overlay and nine more) in Properties. A half-transparent group fades as one picture, so the things inside it do not show through each other. Ground layers take a blend mode too, on the layer itself or from a group around it. Blended ground mixes with what is under it and is not lit again, like blended objects: Multiply reads right at night, Screen and Add stay bright in the dark. Mist and fog take blend modes too: Screen for a glowing haze, Add for magic light, Multiply with a dark or coloured fog for smoke or poison"
+"t": "Object, group, ground, roof and mist layers, and most objects, have an opacity and a blend mode (Multiply, Screen, Overlay and nine more) in Properties. Water, void and rain layers have no blend; cliffs, waterfalls, spills, fire and buildings have none either, and drawn roofs offer Normal, Multiply, Add and Subtract (see Roof blend). Every layer panel ends with the same Layer block: name, opacity, blend, tint, lit by the sun, scenes and mask. A half-transparent group fades as one picture, so the things inside it do not show through each other. Ground layers take a blend mode too, on the layer "
 },
 {
 "p": "Layers",
@@ -346,7 +346,7 @@ window.INK_SEARCH = [
 "p": "Layers",
 "h": "Adding a mask",
 "u": "layers.html#adding-a-mask",
-"t": "Pick the layer or group and click Mask at the bottom of the Layers panel (next to New group). The mask starts showing everything and the Paint tool opens on it. Or right-click the layer > Add mask, or Properties > Mask > Add mask. There you can also start with everything hidden. Masks go on object layers and groups. Ground, water and void layers are already painted, so to mask them, put them in a group and mask the group."
+"t": "Pick the layer or group and click Mask at the bottom of the Layers panel (next to New group). The mask starts showing everything and the Paint tool opens on it. Or right-click the layer > Add mask, or Properties > Mask > Add mask (starts with everything showing). To start with everything hidden, use the layer's right-click menu. Masks go on object layers and groups. Ground, water and void layers are already painted, so to mask them, put them in a group and mask the group."
 },
 {
 "p": "Layers",
@@ -388,7 +388,7 @@ window.INK_SEARCH = [
 "p": "Light and shadow",
 "h": "Scene darkness",
 "u": "lighting.html#scene-darkness",
-"t": "In the Lights tool (L), Day, Dusk, Night and Cave set the whole scene at once. Daylight is the light that reaches everywhere, shadows included. 100% means shadows are only as dark as the sun's extra light makes them. Ambient tint colours that light: blue for night, warm for a sunset. Daylight can go down to 0%: everything outside your lamps is black and the lamps keep their full colour (3D lighting)."
+"t": "In the Lights tool (L), Day, Dusk, Night and Cave set the whole scene at once. Daylight is the light that reaches everywhere, shadows included. 100% means shadows are only as dark as the sun's extra light makes them. Ambient tint colours that light: blue for night, warm for a sunset. Daylight can go down to 0%: everything outside your lamps is black and the lamps keep their full colour (3D lighting). Overall brightness, Overall contrast, Overall saturation and Colour tone (cool to warm) grade the whole finished map; labels stay as drawn. Lamp exposure brightens or dims every lamp at once."
 },
 {
 "p": "Light and shadow",
@@ -406,7 +406,7 @@ window.INK_SEARCH = [
 "p": "Light and shadow",
 "h": "3D lighting",
 "u": "lighting.html#light-3d",
-"t": "Lamps and the sun are lit and shadowed by a hidden 3D copy of the map: walls are solid with real door and window holes, props stand at their real height and lift, cliffs and terrain have their real slopes. Shadows soften as they widen, buildings with roofs only let the sun in through their doors and windows, and exports carry the same look. Render quality (top bar, and Settings > Speed), 10% to 100%: low settings give chunkier, softer shadows and much faster lighting while you work. Exports always render at full quality. Settings > Speed > 3D lighting quality: Low for laptops and integrated gr"
+"t": "Lamps and the sun are lit and shadowed by a hidden 3D copy of the map: walls are solid with real door and window holes, props stand at their real height and lift, cliffs and terrain have their real slopes. Shadows soften as they widen, buildings with roofs only let the sun in through their doors and windows, and exports carry the same look. Render quality (top bar, and Settings > Speed), 10% to 100%: low settings give chunkier, softer shadows and much faster lighting while you work. Exports always render at full quality. 3D lighting in the Lights tool, under Master light (sun or moon), turns i"
 },
 {
 "p": "Light and shadow",
@@ -448,7 +448,7 @@ window.INK_SEARCH = [
 "p": "The tools",
 "h": "Select",
 "u": "tools.html#select",
-"t": "Click, move, scale and turn anything on the map. This is where you end up after placing something, and Esc always brings you back here. Drag a corner to scale, just outside a corner to turn. Arrow keys nudge (Shift moves further). Drag on empty map to box-select. Ctrl+drag drags out a copy. Right-click for the object menu: tint, flip, turn 90 degrees, front or back, move to layer, link (Ctrl+G), make a prefab, distort, hide (H), lock (Ctrl+L). Properties (right) shows the settings of what you picked: size, height in feet, opacity, blend, lit by the sun, casts shadows. Pick two or more things ("
+"t": "Click, move, scale and turn anything on the map. This is where you end up after placing something, and Esc always brings you back here. Drag a corner to scale, just outside a corner to turn. Arrow keys nudge (Shift moves further). Drag on empty map to box-select: the box picks everything it touches, by its real shape (part of a road or a wall is enough). Ctrl+drag drags out a copy. Right-click for the object menu: tint, flip, turn 90 degrees, front or back, move to layer, link (Ctrl+G), make a prefab, distort, hide (H), lock (Ctrl+L). Properties (right) shows the settings of what you picked, i"
 },
 {
 "p": "The tools",
@@ -472,7 +472,7 @@ window.INK_SEARCH = [
 "p": "The tools",
 "h": "Ropes, beams and garlands",
 "u": "tools.html#pen",
-"t": "A line that lies on something (a rope along a dock, a beam across a gap) gets Lift (ft) and Thickness (ft) in Properties > Sun, in steps down to 0.05 ft. Set Lift to the height of what it lies on, so it takes the light up there instead of that thing's shadow. A Thickness above 0 makes it cast its own thin shadow (about 0.2 for a rope). Both work with 3D lighting."
+"t": "A line that lies on something (a rope along a dock, a beam across a gap) gets Lift (ft) and Thickness (ft) in Properties > Height, in steps down to 0.05 ft. Set Lift to the height of what it lies on, so it takes the light up there instead of that thing's shadow. A Thickness above 0 makes it cast its own thin shadow (about 0.2 for a rope). Both work with 3D lighting."
 },
 {
 "p": "The tools",
@@ -544,7 +544,7 @@ window.INK_SEARCH = [
 "p": "Troubleshooting",
 "h": "Lighting",
 "u": "troubleshooting.html#lighting",
-"t": "I don't see any sun shadows The sun switch at the top right (the first of the speed switches) may be off. The Lights panel says so and has a Show sun shadows button. See Speed switches. In the Lights tool, check On and Cast shadows under Master light. With Daylight at 100% shadows are faint. Lower it, or raise Shadow depth. The object needs a height: props use Height (ft), and the layer needs Casts sun shadows. A lamp does not light something A lamp lights only its own layer and the layers under it. Drag the lamp's layer above the thing it should light, or move the thing to a lower layer. See "
+"t": "I don't see any sun shadows The sun switch at the top right (the first of the speed switches) may be off. The Lights panel says so and has a Show sun shadows button. See Speed switches. In the Lights tool, check On and Cast shadows under Master light. With Daylight at 100% shadows are faint. Lower it, or raise Shadow depth. The object needs a height: props use Height (ft), and the layer needs Casts sun shadows. A lamp does not light something With 3D lighting (the default) a lamp lights by height: check the lamp's Height and whether a wall, roof or tall prop is between them. With classic 2D li"
 },
 {
 "p": "Troubleshooting",
@@ -568,7 +568,7 @@ window.INK_SEARCH = [
 "p": "Troubleshooting",
 "h": "Reporting a bug",
 "u": "troubleshooting.html#reporting-a-bug",
-"t": "Help > Report a bug copies your Ink Hammer version, Windows version and graphics card to the clipboard. Paste them into your report with what you did just before it went wrong, and a screenshot if you can."
+"t": "Help > Report a bug... opens a short form: the area, what happened, the steps, how to reach you and an optional picture. Your Ink Hammer version, Windows version and graphics card are added for you. Send sends it; Copy instead copies it all: paste it into #bug-reports on the Anvil N Ink Discord if sending does not work."
 },
 {
 "p": "Walls and buildings",
@@ -611,6 +611,54 @@ window.INK_SEARCH = [
 "h": "Selecting several things",
 "u": "walls.html#selection",
 "t": "A box drag picks everything the box touches, by its real shape. With different kinds of things selected, Properties shows only the settings they all have. Turning or scaling a building with R and [ ] works like the mouse: the walls keep their thickness, and a turned building's box turns with it."
+},
+{
+"p": "Water, the sea and waterfalls",
+"h": "Water, the sea and waterfalls",
+"u": "water.html",
+"t": "Rivers, ponds, swamps and the sea are water layers you paint. Waterfalls form where water runs over a cliff. Everything here takes the sun and lamps."
+},
+{
+"p": "Water, the sea and waterfalls",
+"h": "Painting water",
+"u": "water.html#paint",
+"t": "Pick the Paint tool (B) and click the water button under Add a paint layer for a new water layer, or pick an existing one in Layers. Left-drag paints water, right-drag takes it away. [ and ] change the brush size. Select the water layer to see its settings in Properties. Pick a look... at the top sets them all at once; Save look... keeps your own. Banks get a wet edge, a band of light shallows and brush-stroke ripples on their own. The middle stays deep."
+},
+{
+"p": "Water, the sea and waterfalls",
+"h": "Water looks New in 0.9.24",
+"u": "water.html#looks",
+"t": "Every look in Pick a look..., on grass or sand with the afternoon sun from the top left. Rivers and streams flow; lakes, swamps and still water do not. The sea looks share one painted style. Clear stream Lake Murky river Swamp Sea: the default sea Ocean shore Painted sea Stormy sea: whitecaps and heavy surf Calm lagoon"
+},
+{
+"p": "Water, the sea and waterfalls",
+"h": "Rivers and flow New in 0.9.24",
+"u": "water.html#flow",
+"t": "Flowing water shows which way it runs: light streaks and tone along the current, also on wide slow rivers. Properties > Flow: Flows toward (deg), Speed (0 is still water) and Flow lines. Floating things and rocks in the water get foam around them, and Wake length sets how far their wake trails downstream."
+},
+{
+"p": "Water, the sea and waterfalls",
+"h": "The sea",
+"u": "water.html#sea",
+"t": "The quickest sea is Tools > Specialized > Ocean & coast: the sea, its beach and its seabed along one side of the map in one go. Its Sea look changes a sea already made. A sea layer's own settings are in Properties > Ocean: Waves toward (the wind; the arrow buttons set it to a map edge), Surf, Wave crests, Swell, Chop, Whitecaps, Tide line and Wet sand reach for the beach. Waves keep their direction past ships, logs and rocks, and a ship's wake fades into dashes behind it. New in 0.9.24"
+},
+{
+"p": "Water, the sea and waterfalls",
+"h": "Waterfalls",
+"u": "water.html#waterfalls",
+"t": "The Jungle of Falls sample map: streams over two cliff lines, with spills, spray and mist. From water over a cliff: paint the water across a cliff's top edge onto its face, then press Generate waterfalls in the water layer's Properties. A fall forms wherever the water goes over: its lip on the cliff's top line, its foot at the cliff's foot. Water that stops partway down turns to mist. Press it again after you repaint. On its own: Tools > Specialized > Waterfall. Click the lip, then where it lands (more clicks bend it). Falls take the colour of the water they pour into. Pick your own colour in "
+},
+{
+"p": "Water, the sea and waterfalls",
+"h": "Spills over a cliff",
+"u": "water.html#spills",
+"t": "Where water runs over a long cliff edge it spills as a sheet. The white water where it lands has a smooth, broken edge, and rocks in the spill show through the water with white streaks. Spills take Opacity and Tint in Properties. New in 0.9.24"
+},
+{
+"p": "Water, the sea and waterfalls",
+"h": "Tips",
+"u": "water.html#tips",
+"t": "Water is drawn on the graphics card. On a slow laptop, switch off Anim among the speed switches at the top right: moving water and torch flicker stop while you work. Exports are still pictures either way. See Speed switches."
 },
 {
 "p": "What's new",

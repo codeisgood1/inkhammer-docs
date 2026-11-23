@@ -15,6 +15,7 @@
       ["tools.html", "The tools"],
       ["cliffs.html", "Cliffs, dunes and hills"],
       ["walls.html", "Walls and buildings"],
+      ["water.html", "Water and waterfalls"],
       ["layers.html", "Layers"],
       ["lighting.html", "Light and shadow"],
       ["export.html", "Exporting for play"]

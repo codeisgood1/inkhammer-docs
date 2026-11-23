@@ -22,7 +22,7 @@
       <li>The eye hides a layer, the lock stops it being changed. The number after a name is how many things it holds.</li>
       <li>Double-click a name to rename it. Right-click for copy, duplicate, move into a group, select everything on it, and new layers of each kind.</li>
       <li>Click the arrow on a layer to list what is on it; click a row to pick that one thing.</li>
-      <li>The buttons along the bottom add a layer, a group, and the special kinds below.</li>
+      <li>The buttons along the bottom add a layer, a mask, and ground, water, void and mist layers. Roof and rain layers come from the row of buttons in the Paint tool (<span class="ui">Add a paint layer</span>).</li>
       <li>New objects and prefabs go on the layer you have picked. Pick a group and they go on its top object layer; pick a ground, water or mist layer and they go on the nearest object layer above it. A locked or hidden layer takes nothing (the status bar says why).</li>
     </ul>
     <h3>Dragging rows</h3>
@@ -67,7 +67,7 @@
 </ul>
 
 <h2>Opacity and blend modes</h2>
-<p>Each layer and each object has an opacity and a blend mode (Multiply, Screen, Overlay and nine more) in Properties. A half-transparent group fades as one picture, so the things inside it do not show through each other.</p>
+<p>Object, group, ground, roof and mist layers, and most objects, have an opacity and a blend mode (Multiply, Screen, Overlay and nine more) in Properties. Water, void and rain layers have no blend; cliffs, waterfalls, spills, fire and buildings have none either, and drawn roofs offer Normal, Multiply, Add and Subtract (see <a href="walls.html#roof-blend">Roof blend</a>). Every layer panel ends with the same Layer block: name, opacity, blend, tint, lit by the sun, scenes and mask. A half-transparent group fades as one picture, so the things inside it do not show through each other.</p>
 <p>Ground layers take a blend mode too, on the layer itself or from a group around it. Blended ground mixes with what is under it and is not lit again, like blended objects: Multiply reads right at night, Screen and Add stay bright in the dark.</p>
 <p>Mist and fog take blend modes too: Screen for a glowing haze, Add for magic light, Multiply with a dark or coloured fog for smoke or poison gas (white fog on Multiply or Overlay barely shows). For fog, set the blend on the Fog group, not on the Fog emitters layer: that layer only holds the markers, and its Properties has <span class="ui">Go to the fog</span>.</p>
 
@@ -76,7 +76,7 @@
 <h3>Adding a mask</h3>
 <ul>
   <li>Pick the layer or group and click <b>Mask</b> at the bottom of the Layers panel (next to New group). The mask starts showing everything and the Paint tool opens on it.</li>
-  <li>Or right-click the layer &gt; <span class="ui">Add mask</span>, or <span class="ui">Properties &gt; Mask &gt; Add mask</span>. There you can also start with everything hidden.</li>
+  <li>Or right-click the layer &gt; <span class="ui">Add mask</span>, or <span class="ui">Properties &gt; Mask &gt; Add mask</span> (starts with everything showing). To start with everything hidden, use the layer's right-click menu.</li>
   <li>Masks go on object layers and groups. Ground, water and void layers are already painted, so to mask them, put them in a group and mask the group.</li>
 </ul>
 <h3>Masking single objects or a few together</h3>

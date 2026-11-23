@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Water, the sea and waterfalls | Ink Hammer guide</title>
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/docs.css">
+</head>
+<body>
+<main class="doc">
+<div class="crumb">Using Ink Hammer</div>
+<h1>Water, the sea and waterfalls</h1>
+<p class="lede">Rivers, ponds, swamps and the sea are water layers you paint. Waterfalls form where water runs over a cliff. Everything here takes the sun and lamps.</p>
+
+<h2 id="paint">Painting water</h2>
+<ul>
+  <li>Pick the <span class="ui">Paint</span> tool (<kbd>B</kbd>) and click the water button under <span class="ui">Add a paint layer</span> for a new water layer, or pick an existing one in Layers.</li>
+  <li>Left-drag paints water, right-drag takes it away. <kbd>[</kbd> and <kbd>]</kbd> change the brush size.</li>
+  <li>Select the water layer to see its settings in Properties. <span class="ui">Pick a look...</span> at the top sets them all at once; <span class="ui">Save look...</span> keeps your own.</li>
+  <li>Banks get a wet edge, a band of light shallows and brush-stroke ripples on their own. The middle stays deep.</li>
+</ul>
+
+<h2 id="looks">Water looks <span class="since">New in 0.9.24</span></h2>
+<p>Every look in <span class="ui">Pick a look...</span>, on grass or sand with the afternoon sun from the top left. Rivers and streams flow; lakes, swamps and still water do not. The sea looks share one painted style.</p>
+<!-- gallery:water -->
+<div class="gallery">
+  <figure><img class="zoom" loading="lazy" src="img/looks/water-clear-stream.jpg" alt="Clear stream"><figcaption><b>Clear stream</b></figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/water-lake.jpg" alt="Lake"><figcaption><b>Lake</b></figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/water-murky-river.jpg" alt="Murky river"><figcaption><b>Murky river</b></figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/water-swamp.jpg" alt="Swamp"><figcaption><b>Swamp</b></figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/water-sea.jpg" alt="Sea"><figcaption><b>Sea</b>: the default sea</figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/water-ocean-shore.jpg" alt="Ocean shore"><figcaption><b>Ocean shore</b></figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/water-painted-sea.jpg" alt="Painted sea"><figcaption><b>Painted sea</b></figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/water-stormy-sea.jpg" alt="Stormy sea"><figcaption><b>Stormy sea</b>: whitecaps and heavy surf</figcaption></figure>
+  <figure><img class="zoom" loading="lazy" src="img/looks/water-calm-lagoon.jpg" alt="Calm lagoon"><figcaption><b>Calm lagoon</b></figcaption></figure>
+</div>
+<!-- /gallery -->
+
+<h2 id="flow">Rivers and flow <span class="since">New in 0.9.24</span></h2>
+<ul>
+  <li>Flowing water shows which way it runs: light streaks and tone along the current, also on wide slow rivers.</li>
+  <li><span class="ui">Properties &gt; Flow</span>: <span class="ui">Flows toward (deg)</span>, <span class="ui">Speed</span> (0 is still water) and <span class="ui">Flow lines</span>.</li>
+  <li>Floating things and rocks in the water get foam around them, and <span class="ui">Wake length</span> sets how far their wake trails downstream.</li>
+</ul>
+
+<h2 id="sea">The sea</h2>
+<ul>
+  <li>The quickest sea is <span class="ui">Tools &gt; Specialized &gt; Ocean &amp; coast</span>: the sea, its beach and its seabed along one side of the map in one go. Its <span class="ui">Sea look</span> changes a sea already made.</li>
+  <li>A sea layer's own settings are in <span class="ui">Properties &gt; Ocean</span>: <span class="ui">Waves toward</span> (the wind; the arrow buttons set it to a map edge), <span class="ui">Surf</span>, <span class="ui">Wave crests</span>, <span class="ui">Swell</span>, <span class="ui">Chop</span>, <span class="ui">Whitecaps</span>, <span class="ui">Tide line</span> and <span class="ui">Wet sand reach</span> for the beach.</li>
+  <li>Waves keep their direction past ships, logs and rocks, and a ship's wake fades into dashes behind it. <span class="since">New in 0.9.24</span></li>
+</ul>
+
+<h2 id="waterfalls">Waterfalls</h2>
+<figure class="shot"><img src="img/features/waterfall.jpg" alt="Streams falling over cliffs on the Jungle of Falls sample map"><figcaption>The Jungle of Falls sample map: streams over two cliff lines, with spills, spray and mist.</figcaption></figure>
+<ul>
+  <li><b>From water over a cliff</b>: paint the water across a cliff's top edge onto its face, then press <span class="ui">Generate waterfalls</span> in the water layer's Properties. A fall forms wherever the water goes over: its lip on the cliff's top line, its foot at the cliff's foot. Water that stops partway down turns to mist. Press it again after you repaint.</li>
+  <li><b>On its own</b>: <span class="ui">Tools &gt; Specialized &gt; Waterfall</span>. Click the lip, then where it lands (more clicks bend it).</li>
+  <li>Falls take the colour of the water they pour into. Pick your own colour in Properties; <span class="ui">Match the water</span> puts it back. <span class="since">New in 0.9.24</span></li>
+  <li>Their sides break into falling strands, and the water rolls bright over the lip. <span class="since">New in 0.9.24</span></li>
+  <li>A rock placed in a fall sits in the water: the water slides over its lower part and foams round its dry top.</li>
+</ul>
+
+<h3 id="spills">Spills over a cliff</h3>
+<p>Where water runs over a long cliff edge it spills as a sheet. The white water where it lands has a smooth, broken edge, and rocks in the spill show through the water with white streaks. Spills take <span class="ui">Opacity</span> and <span class="ui">Tint</span> in Properties. <span class="since">New in 0.9.24</span></p>
+
+<h2 id="tips">Tips</h2>
+<ul>
+  <li>Water is drawn on the graphics card. On a slow laptop, switch off <span class="ui">Anim</span> among the speed switches at the top right: moving water and torch flicker stop while you work. Exports are still pictures either way. See <a href="lighting.html#speed-switches">Speed switches</a>.</li>
+</ul>
+</main>
+<script src="assets/search.js"></script>
+<script src="assets/docs.js"></script>
+</body>
+</html>

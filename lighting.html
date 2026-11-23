@@ -21,6 +21,7 @@
       <li><span class="ui">Daylight</span> is the light that reaches everywhere, shadows included. 100% means shadows are only as dark as the sun's extra light makes them.</li>
       <li><span class="ui">Ambient tint</span> colours that light: blue for night, warm for a sunset.</li>
       <li>Daylight can go down to 0%: everything outside your lamps is black and the lamps keep their full colour (3D lighting).</li>
+      <li><span class="ui">Overall brightness</span>, <span class="ui">Overall contrast</span>, <span class="ui">Overall saturation</span> and <span class="ui">Colour tone</span> (cool to warm) grade the whole finished map; labels stay as drawn. <span class="ui">Lamp exposure</span> brightens or dims every lamp at once.</li>
     </ul>
 
     <h2>The sun or moon</h2>
@@ -56,12 +57,11 @@
 <p>Lamps and the sun are lit and shadowed by a hidden 3D copy of the map: walls are solid with real door and window holes, props stand at their real height and lift, cliffs and terrain have their real slopes. Shadows soften as they widen, buildings with roofs only let the sun in through their doors and windows, and exports carry the same look.</p>
 <ul>
   <li><span class="ui">Render quality</span> (top bar, and <span class="ui">Settings &gt; Speed</span>), 10% to 100%: low settings give chunkier, softer shadows and much faster lighting while you work. Exports always render at full quality.</li>
-  <li><span class="ui">Settings &gt; Speed &gt; 3D lighting quality</span>: Low for laptops and integrated graphics, Standard, or High.</li>
-  <li><span class="ui">Lighting &gt; Master light &gt; 3D lighting</span> turns it off for the classic 2D lighting. Computers without Vulkan or Direct3D 12 use classic lighting.</li>
+  <li><span class="ui">3D lighting</span> in the Lights tool, under <span class="ui">Master light (sun or moon)</span>, turns it off for the classic 2D lighting. The choice is kept on your computer, not in the map. Computers without Vulkan or Direct3D 12 use classic lighting.</li>
   <li><span class="ui">View &gt; Show shadow shapes (3D)</span> shows each object's 3D shape over the map, and the 3D view panel shows the whole copy. Shape any asset in the Asset Manager with <span class="ui">Design 3D shape</span>.</li>
   <li>Only things that exist on the map cast: a mast drawn into a ship's deck picture casts nothing. Add an object for it.</li>
   <li>Layer order does not matter to 3D lighting, only heights do. A prop partly over a step or a low ledge is lit just above the highest ground under it, and props lean only with gentle slopes, so stair edges do not show through them.</li>
-  <li>A rope or beam lying on a dock: give the line a <span class="ui">Lift</span> (and a <span class="ui">Thickness</span> for its own shadow) in <span class="ui">Properties &gt; Sun</span>.</li>
+  <li>A rope or beam lying on a dock: give the line a <span class="ui">Lift</span> (and a <span class="ui">Thickness</span> for its own shadow) in <span class="ui">Properties &gt; Height</span>. Walls have <span class="ui">Lift</span> too: a railing or beam that hangs off the ground.</li>
   <li>The 3D view shows props with a <span class="ui">Design 3D shape</span> in that shape. If a shadow looks wrong there, check the shape's slices reach the top of the picture.</li>
   <li>Sun <span class="ui">Soft edges</span> can blur a step's light onto a prop sitting partly over it (a lighter patch). Lower it on that map if it shows.</li>
 </ul>
